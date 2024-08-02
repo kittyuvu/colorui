@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:colorui/icons.dart';
 import 'package:flutter/material.dart';
 
 const bgIMG = "https://beta3.color-ui.com/01.jpeg";
@@ -8,63 +9,63 @@ class MenuItem {
   MenuItem({
     required this.title,
     required this.subTitle,
-    this.icon = "",
+    required this.icon,
     this.href = "",
   });
   final String title;
   final String subTitle;
-  final String icon;
+  final IconData icon;
   final String href;
 }
 
 /// https://beta3.color-ui.com
 Map<String, List<MenuItem>> menus = {
   "基础": [
-    MenuItem(title: "系统", subTitle: 'system'),
-    MenuItem(title: "主题", subTitle: 'theme'),
-    MenuItem(title: "导航栏", subTitle: 'navbar'),
-    MenuItem(title: "背景", subTitle: 'background'),
-    MenuItem(title: "文本", subTitle: 'text'),
-    MenuItem(title: "图标", subTitle: 'icon'),
-    MenuItem(title: "阴影", subTitle: 'shadow'),
-    MenuItem(title: "边框", subTitle: 'border'),
+    MenuItem(title: "系统", subTitle: 'system', icon: CuIcons.set),
+    MenuItem(title: "主题", subTitle: 'theme', icon: CuIcons.paint),
+    MenuItem(title: "导航栏", subTitle: 'navbar', icon: CuIcons.topbar),
+    MenuItem(title: "背景", subTitle: 'background', icon: CuIcons.palette),
+    MenuItem(title: "文本", subTitle: 'text', icon: CuIcons.aa),
+    MenuItem(title: "图标", subTitle: 'icon', icon: CuIcons.magic),
+    MenuItem(title: "阴影", subTitle: 'shadow', icon: CuIcons.darkmode),
+    MenuItem(title: "边框", subTitle: 'border', icon: CuIcons.box),
   ],
   "视图": [
-    MenuItem(title: "头像", subTitle: 'avatar'),
-    MenuItem(title: "标题", subTitle: 'titel'),
-    MenuItem(title: "标签", subTitle: 'tag'),
-    MenuItem(title: "按钮", subTitle: 'button'),
-    MenuItem(title: "图片", subTitle: 'image'),
-    MenuItem(title: "代码", subTitle: 'code'),
-    MenuItem(title: "进度条", subTitle: 'progress'),
-    MenuItem(title: "加载中", subTitle: 'loading'),
+    MenuItem(title: "头像", subTitle: 'avatar', icon: CuIcons.avatar),
+    MenuItem(title: "标题", subTitle: 'title', icon: CuIcons.tt),
+    MenuItem(title: "标签", subTitle: 'tag', icon: CuIcons.tag),
+    MenuItem(title: "按钮", subTitle: 'button', icon: CuIcons.ellipse),
+    MenuItem(title: "图片", subTitle: 'image', icon: CuIcons.pic),
+    MenuItem(title: "代码", subTitle: 'code', icon: CuIcons.codeBox),
+    MenuItem(title: "进度条", subTitle: 'progress', icon: CuIcons.progress),
+    MenuItem(title: "加载中", subTitle: 'loading', icon: CuIcons.loaderFill),
   ],
   "布局": [
-    MenuItem(title: "容器", subTitle: 'flex'),
-    MenuItem(title: "菜单", subTitle: 'menu'),
-    MenuItem(title: "浮动", subTitle: 'float'),
-    MenuItem(title: "卡片", subTitle: 'card'),
-    MenuItem(title: "列表", subTitle: 'list'),
-    MenuItem(title: "栅格", subTitle: 'grid'),
-    MenuItem(title: "时间轴", subTitle: 'timeline'),
-    MenuItem(title: "表格", subTitle: 'table'),
+    MenuItem(title: "容器", subTitle: 'flex', icon: CuIcons.viewAgenda),
+    MenuItem(title: "菜单", subTitle: 'menu', icon: CuIcons.viewAgenda),
+    MenuItem(title: "浮动", subTitle: 'float', icon: CuIcons.dashboard),
+    MenuItem(title: "卡片", subTitle: 'card', icon: CuIcons.card),
+    MenuItem(title: "列表", subTitle: 'list', icon: CuIcons.viewList),
+    MenuItem(title: "栅格", subTitle: 'grid', icon: CuIcons.grid),
+    MenuItem(title: "时间轴", subTitle: 'timeline', icon: CuIcons.stock),
+    MenuItem(title: "表格", subTitle: 'table', icon: CuIcons.grid),
   ],
   "交互": [
-    MenuItem(title: "气泡框", subTitle: 'popover'),
-    MenuItem(title: "模态框", subTitle: 'modal'),
-    MenuItem(title: "轻提示", subTitle: 'toast'),
-    MenuItem(title: "抽屉", subTitle: 'drawer'),
-    MenuItem(title: "折叠面板", subTitle: 'collapse'),
-    MenuItem(title: "选项卡", subTitle: 'tab'),
-    MenuItem(title: "轮播图", subTitle: 'swiper'),
-    MenuItem(title: "步骤条", subTitle: 'steps'),
+    MenuItem(title: "气泡框", subTitle: 'popover', icon: CuIcons.popover),
+    MenuItem(title: "模态框", subTitle: 'modal', icon: CuIcons.stop),
+    MenuItem(title: "轻提示", subTitle: 'toast', icon: CuIcons.subtitles),
+    MenuItem(title: "抽屉", subTitle: 'drawer', icon: CuIcons.quill),
+    MenuItem(title: "折叠面板", subTitle: 'collapse', icon: CuIcons.viewDay),
+    MenuItem(title: "选项卡", subTitle: 'tab', icon: CuIcons.viewArray),
+    MenuItem(title: "轮播图", subTitle: 'swiper', icon: CuIcons.viewCarousel),
+    MenuItem(title: "步骤条", subTitle: 'steps', icon: CuIcons.gitCommit),
   ],
   "表单": [
-    MenuItem(title: "输入框", subTitle: 'input'),
-    MenuItem(title: "单选框", subTitle: 'radio'),
-    MenuItem(title: "复选框", subTitle: 'checkbox'),
-    MenuItem(title: "开关", subTitle: 'switch'),
-    MenuItem(title: "选择器", subTitle: 'Picker'),
+    MenuItem(title: "输入框", subTitle: 'input', icon: CuIcons.input),
+    MenuItem(title: "单选框", subTitle: 'radio', icon: CuIcons.radiobox),
+    MenuItem(title: "复选框", subTitle: 'checkbox', icon: CuIcons.checkbox),
+    MenuItem(title: "开关", subTitle: 'switch', icon: CuIcons.toggle),
+    MenuItem(title: "选择器", subTitle: 'picker', icon: CuIcons.viewHeadline),
   ],
 };
 
@@ -243,9 +244,11 @@ class CuSimpleCard extends StatelessWidget {
                   ],
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.only(top: 8),
-                child: Icon(Icons.arrow_forward_ios, color: Colors.white),
+              Padding(
+                padding: const EdgeInsets.only(top: 8),
+                child: Builder(builder: (context) {
+                  return Icon(data.icon, color: Colors.white);
+                }),
               ),
             ],
           ),
@@ -351,9 +354,7 @@ class SimpleDecorationLine extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return true;
-  }
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
 
 class CuAction extends StatelessWidget {
