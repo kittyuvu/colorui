@@ -1,8 +1,23 @@
 // https://gist.github.com/d1y/64b2098dac30be4d47aaac2f1a7d8149
 
-library colorui;
-
 import 'package:flutter/widgets.dart';
+
+class CuColors {
+  static const yellow = Color(0xfffbbd08);
+  static const orange = Color(0xfff37b1d);
+  static const red = Color(0xffe54d42);
+  static const pink = Color(0xffe03997);
+  static const mauve = Color(0xffb745cb);
+  static const purple = Color(0xff8044de);
+  static const blue = Color(0xff0081ff);
+  static const cyan = Color(0xff37c0fe);
+  static const green = Color(0xff3eb93b);
+  static const olive = Color(0xff8dc63f);
+  static const grey = Color(0xff8799a3);
+  static const brown = Color(0xffa5673f);
+  static const black = Color(0xff000000);
+  static const white = Color(0xffffffff);
+}
 
 class CuLinearGradient {
   static const yellow = LinearGradient(
