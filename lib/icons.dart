@@ -1,8 +1,9 @@
-/// `colorui` 图标库
-/// wget -O fonts/iconfont.ttf https://at.alicdn.com/t/font_1656945_d66u4pxvlq6.ttf
-/// gist: https://gist.github.com/d1y/64b2098dac30be4d47aaac2f1a7d8149
-library colorui;
+// `colorui` 图标库
+// wget -O fonts/iconfont.ttf https://at.alicdn.com/t/font_1656945_d66u4pxvlq6.ttf
+// gist: https://gist.github.com/d1y/64b2098dac30be4d47aaac2f1a7d8149
+
 import 'package:flutter/widgets.dart';
+
 class CuIcons {
   static const String _family = 'cufont';
   static const String _pkg = 'colorui';
