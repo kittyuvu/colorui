@@ -55,9 +55,11 @@ class _UIAppState extends State<UIApp> {
                     var curr = item.value[idx];
                     return CuSimpleCard(
                       data: curr,
-                      color: curr.bg,
+                      color: curr.color,
                       onTap: () {
-                        context.pushNamed("system");
+                        if (curr.name.isNotEmpty) {
+                          context.pushNamed(curr.name);
+                        }
                       },
                     );
                   },
