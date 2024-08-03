@@ -23,7 +23,7 @@ class ThemePageState extends State<ThemePage> {
     }
     return UIMainLayout(
       child: Scaffold(
-        appBar: const CuSimpleAppBar(title: "主题"),
+        appBar: const CuNavbar(title: "主题"),
         backgroundColor: bg,
         body: Center(
           child: Column(
@@ -82,7 +82,7 @@ class ThemePageState extends State<ThemePage> {
                     lightEnable = true;
                     darkEnable = false;
                   }
-                  setState(() { });
+                  setState(() {});
                 },
                 child: const Text("切换", style: TextStyle(fontSize: 14)),
               ),

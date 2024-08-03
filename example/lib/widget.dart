@@ -24,7 +24,7 @@ class UIMainLayout extends StatelessWidget {
         width: double.infinity,
         height: double.infinity,
         decoration: const BoxDecoration(
-          color: CuColors.white,
+          color: Color(0xff0ca5e9),
           image: DecorationImage(
             fit: BoxFit.cover,
             image: NetworkImage(kBgIMG),
@@ -32,6 +32,7 @@ class UIMainLayout extends StatelessWidget {
         ),
         child: Center(
           child: Container(
+            clipBehavior: Clip.hardEdge,
             decoration: BoxDecoration(
               color: CuColors.white,
               borderRadius: BorderRadius.circular(12),
@@ -52,120 +53,6 @@ class UIMainLayout extends StatelessWidget {
       );
     }
     return child;
-  }
-}
-
-@Deprecated("不要使用")
-class CuSimpleAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CuSimpleAppBar({
-    super.key,
-    this.onBack,
-    this.title,
-  });
-
-  final VoidCallback? onBack;
-  final String? title;
-
-  @override
-  Widget build(BuildContext context) {
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        color: CuColors.white,
-        border: Border(
-          bottom: BorderSide(
-            color: CuColors.black.withOpacity(.12),
-            width: 1,
-          ),
-        ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: CuActionBar(
-          centerTitle: title,
-          onTapLeft: () {
-            if (onBack != null) {
-              onBack!();
-            } else {
-              Navigator.pop(context);
-            }
-          },
-        ),
-      ),
-    );
-  }
-
-  @override
-  Size get preferredSize => const Size(double.infinity, 50);
-}
-
-// 啊! 这里好蠢啊, 没不要这么复杂啊
-@Deprecated("不要使用")
-class CuActionBar extends StatelessWidget {
-  const CuActionBar({
-    super.key,
-    this.leftWidget,
-    this.leftTitle,
-    this.centerWidget,
-    this.centerTitle,
-    this.rightWidget,
-    this.rightIcon,
-    this.onTapLeft,
-  });
-
-  final Widget? leftWidget;
-  final String? leftTitle;
-  final Widget? centerWidget;
-  final String? centerTitle;
-  final Widget? rightWidget;
-  final IconData? rightIcon;
-  final VoidCallback? onTapLeft;
-
-  Widget get left {
-    if (leftWidget != null) return leftWidget!;
-    return GestureDetector(
-      onTap: onTapLeft,
-      child: MouseRegion(
-        cursor: SystemMouseCursors.click,
-        child: Row(
-          children: [
-            const Icon(
-              CuIcons.back,
-              size: 16,
-            ),
-            if (leftTitle != null) Text(leftTitle!),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget get center {
-    if (centerWidget != null) return centerWidget!;
-    if (centerTitle != null) {
-      return Expanded(
-        child: Center(
-          child: Text(centerTitle!),
-        ),
-      );
-    }
-    return const Expanded(child: SizedBox.shrink());
-  }
-
-  Widget get right {
-    if (rightWidget != null) return rightWidget!;
-    if (rightIcon != null) return Icon(rightIcon!);
-    return const SizedBox.shrink();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        left,
-        center,
-        right,
-      ],
-    );
   }
 }
 

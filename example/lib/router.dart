@@ -1,3 +1,4 @@
+import 'package:example/pages/basics/navbar.dart';
 import 'package:example/pages/basics/system.dart';
 import 'package:example/pages/basics/theme.dart';
 import 'package:example/uikit.dart';
@@ -26,6 +27,11 @@ final $router = GoRouter(
           name: "theme",
           path: "theme",
           builder: (context, state) => const ThemePage(),
+        ),
+        GoRoute(
+          name: "navbar",
+          path: "navbar",
+          builder: (context, state) => const NavbarPage(),
         ),
       ],
     ),
