@@ -64,14 +64,14 @@ class ThemePageState extends State<ThemePage> {
                   ),
                 ],
               ),
-              const SizedBox(height: 12),
+              hSpacing,
               Text(
                 "然而暂未支持~",
                 style: TextStyle(
                   color: darkEnable ? CuColors.white : CuColors.blue,
                 ),
               ),
-              const SizedBox(height: 12),
+              hSpacing,
               CupertinoButton.filled(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 onPressed: () {

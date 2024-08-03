@@ -40,22 +40,18 @@ class _NavbarPageState extends State<NavbarPage> {
   Widget build(BuildContext context) {
     return UIMainLayout(
       child: Scaffold(
-          appBar: const CuNavbar(
-            title: "导航栏",
-          ),
+          appBar: const CuNavbar(title: "导航栏"),
           body: SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.all(12),
               child: Column(
                 children: [
                   const CuAction(title: "使用指南"),
-                  const SizedBox(
-                    height: 12,
-                  ),
+                  hSpacing,
                   Column(
                     children: [
                       CuNavbar(title: title, backTitle: backText),
-                      const SizedBox(height: 12),
+                      hSpacing,
                       Row(
                         children: [
                           Expanded(
@@ -65,7 +61,7 @@ class _NavbarPageState extends State<NavbarPage> {
                               controller: $title,
                             ),
                           ),
-                          const SizedBox(width: 12),
+                          wSpacing,
                           Expanded(
                             child: TextField(
                               decoration:

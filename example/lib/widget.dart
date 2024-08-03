@@ -5,6 +5,22 @@ import 'package:flutter/widgets.dart';
 const kMaxScreenWidth = 600;
 const kBgIMG = "https://beta3.color-ui.com/01.jpeg";
 
+/// 12px
+/// ```
+///   ^
+///   |
+///   |
+///   |
+///   v
+/// ```
+var hSpacing = const SizedBox(height: 12);
+
+/// 12px
+/// ```
+/// < - - - >
+/// ```
+var wSpacing = const SizedBox(width: 12);
+
 class UIMainLayout extends StatelessWidget {
   const UIMainLayout({
     super.key,
