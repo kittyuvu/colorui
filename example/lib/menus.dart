@@ -67,6 +67,7 @@ Map<String, List<MenuItem>> kMenus = {
       subTitle: 'icon',
       icon: CuIcons.magic,
       color: CuLinearGradient.blue,
+      name: "icons",
     ),
     MenuItem(
       title: "阴影",
