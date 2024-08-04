@@ -1,5 +1,6 @@
 import 'package:colorui/colorui.dart';
 import 'package:example/pages/basics/background.dart';
+import 'package:example/pages/basics/border.dart';
 import 'package:example/pages/basics/icons.dart';
 import 'package:example/pages/basics/navbar.dart';
 import 'package:example/pages/basics/shadow.dart';
@@ -62,6 +63,11 @@ final $router = GoRouter(
           name: "shadow",
           path: "shadow",
           builder: (context, state) => const ShadowPage(),
+        ),
+        GoRoute(
+          name: "border",
+          path: "border",
+          builder: (context, state) => const BorderPage(),
         ),
       ],
     ),
