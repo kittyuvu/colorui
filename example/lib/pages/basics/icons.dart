@@ -500,7 +500,9 @@ class _IconsPageState extends State<IconsPage> {
                         decoration: BoxDecoration(
                           color: CuColors.white,
                           borderRadius: 12.$radiusCircle,
-                          border: Border.all(color: CuColors.grey.withOpacity(.24)),
+                          border: Border.all(
+                            color: CuColors.grey.withOpacity(.24),
+                          ),
                         ),
                         child: Center(
                           child: Column(

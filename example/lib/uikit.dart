@@ -51,6 +51,7 @@ class _UIAppState extends State<UIApp> {
                     return CuSimpleCard(
                       data: curr,
                       color: curr.color,
+                      shadow: curr.shadow,
                       onTap: () {
                         if (curr.name.isNotEmpty) {
                           context.pushNamed(curr.name);
@@ -83,12 +84,14 @@ class CuSimpleCard extends StatelessWidget {
   const CuSimpleCard({
     super.key,
     required this.data,
+    required this.shadow,
     this.color,
     this.onTap,
   });
   final MenuItem data;
   final Gradient? color;
   final VoidCallback? onTap;
+  final List<BoxShadow> shadow;
 
   @override
   Widget build(BuildContext context) {
@@ -99,7 +102,8 @@ class CuSimpleCard extends StatelessWidget {
         child: DecoratedBox(
           decoration: BoxDecoration(
             gradient: color,
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: 12.$radiusCircle,
+            boxShadow: shadow,
           ),
           child: Padding(
             padding: 8.$edgeAll,

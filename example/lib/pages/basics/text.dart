@@ -56,61 +56,58 @@ class _TextPageState extends State<TextPage> {
           appBar: const CuNavbar(title: "文本"),
           body: Padding(
             padding: 12.$edgeAll,
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  const CuAction(title: "尺寸示例"),
-                  hSpacing,
-                  Container(
-                    padding: 24.$edgeAll,
+            child: Column(
+              children: [
+                const CuAction(title: "尺寸示例"),
+                hSpacing,
+                Expanded(
+                  child: Container(
                     decoration: BoxDecoration(
                       color: CuColors.white,
                       borderRadius: 12.$radiusCircle,
-                      boxShadow: [
-                        BoxShadow(
-                          color: CuColors.black.withOpacity(0.1),
-                          blurRadius: 2,
-                          offset: const Offset(0, 2),
-                        )
-                      ],
+                      boxShadow: CuBoxShadow.lg$(color: CuColors.blue),
                     ),
-                    child: Column(
-                      children: kTextSizes.map((item) {
-                        String name = item["name"];
-                        double size = item["size"];
-                        String note = item["note"];
-                        String text = item["text"];
-                        return Padding(
-                          padding: 12.$edgeAll,
-                          child: Row(
-                            children: [
-                              Text(size.toString(),
-                                  style: const TextStyle().$black.$lg),
-                              12.wSpace,
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      text,
-                                      style: TextStyle(fontSize: size),
-                                    ),
-                                    Text(note, style: const TextStyle().$gray),
-                                    Text(
-                                      "$name ",
-                                      style: const TextStyle().$gray.$sm,
-                                    ),
-                                  ],
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: kTextSizes.map((item) {
+                          String name = item["name"];
+                          double size = item["size"];
+                          String note = item["note"];
+                          String text = item["text"];
+                          return Padding(
+                            padding: 12.$edgeAll,
+                            child: Row(
+                              children: [
+                                Text(size.toString(),
+                                    style: const TextStyle().$black.$lg),
+                                12.wSpace,
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        text,
+                                        style: TextStyle(fontSize: size),
+                                      ),
+                                      Text(note,
+                                          style: const TextStyle().$gray),
+                                      Text(
+                                        "$name ",
+                                        style: const TextStyle().$gray.$sm,
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        );
-                      }).toList(),
+                              ],
+                            ),
+                          );
+                        }).toList(),
+                      ),
                     ),
-                  )
-                ],
-              ),
+                  ),
+                )
+              ],
             ),
           )),
     );

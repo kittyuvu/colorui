@@ -1,4 +1,5 @@
 import 'package:colorui/colorui.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -52,14 +53,7 @@ class UIMainLayout extends StatelessWidget {
             decoration: BoxDecoration(
               color: CuColors.white,
               borderRadius: 12.$radiusCircle,
-              boxShadow: const [
-                BoxShadow(
-                  color: Color(0x00afa6a6),
-                  offset: Offset(1, 1),
-                  blurRadius: 2,
-                  spreadRadius: 1,
-                )
-              ],
+              boxShadow: CuBoxShadow.lg$(),
             ),
             width: 420,
             height: height * 0.72,

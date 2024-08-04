@@ -2,6 +2,7 @@ import 'package:colorui/colorui.dart';
 import 'package:example/pages/basics/background.dart';
 import 'package:example/pages/basics/icons.dart';
 import 'package:example/pages/basics/navbar.dart';
+import 'package:example/pages/basics/shadow.dart';
 import 'package:example/pages/basics/system.dart';
 import 'package:example/pages/basics/tabbar.dart';
 import 'package:example/pages/basics/text.dart';
@@ -56,6 +57,11 @@ final $router = GoRouter(
           name: "icons",
           path: "icons",
           builder: (context, state) => const IconsPage(),
+        ),
+        GoRoute(
+          name: "shadow",
+          path: "shadow",
+          builder: (context, state) => const ShadowPage(),
         ),
       ],
     ),
