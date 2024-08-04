@@ -1,6 +1,5 @@
 import 'package:colorui/colorui.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
 class CuNavbar extends StatelessWidget implements PreferredSizeWidget {
   const CuNavbar({
@@ -10,7 +9,7 @@ class CuNavbar extends StatelessWidget implements PreferredSizeWidget {
     this.context,
     this.onBack,
     this.title,
-    this.height = 50,
+    this.height = kToolbarHeight,
     this.backSpacing = 6,
   });
   final double height;
