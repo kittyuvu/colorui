@@ -1,11 +1,11 @@
+import 'package:colorui/colorui.dart';
 import 'package:example/pages/basics/navbar.dart';
 import 'package:example/pages/basics/system.dart';
 import 'package:example/pages/basics/theme.dart';
 import 'package:example/uikit.dart';
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-GoRouterWidgetBuilder $noop = (context, state) => const SizedBox.shrink();
+GoRouterWidgetBuilder $noop = (context, state) => nil;
 
 final $router = GoRouter(
   initialLocation: "/",
