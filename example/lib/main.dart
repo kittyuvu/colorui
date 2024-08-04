@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:colorui/colorui.dart';
 import 'package:example/router.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class UIExample extends StatelessWidget {
       title: 'UI Example',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: CuColors.blue),
         useMaterial3: true,
       ),
       scrollBehavior: DragonScrollBehavior(),
