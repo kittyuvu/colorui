@@ -47,7 +47,7 @@ class ThemePageState extends State<ThemePage> {
                       xColor: CuColors.grey,
                     ),
                   ),
-                  const SizedBox(width: 24),
+                  32.wSpace,
                   GestureDetector(
                     onTap: () {
                       darkEnable = !darkEnable;
@@ -73,7 +73,7 @@ class ThemePageState extends State<ThemePage> {
               ),
               hSpacing,
               CupertinoButton.filled(
-                padding: const EdgeInsets.symmetric(horizontal: 24),
+                padding: 66.$edgeLR,
                 onPressed: () {
                   if (lightEnable) {
                     lightEnable = false;
@@ -84,7 +84,7 @@ class ThemePageState extends State<ThemePage> {
                   }
                   setState(() {});
                 },
-                child: const Text("切换", style: TextStyle(fontSize: 14)),
+                child: Text("切换", style: const TextStyle().$df),
               ),
             ],
           ),

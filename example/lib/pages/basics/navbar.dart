@@ -43,7 +43,7 @@ class _NavbarPageState extends State<NavbarPage> {
           appBar: const CuNavbar(title: "导航栏"),
           body: SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.all(12),
+              padding: 12.$edgeAll,
               child: Column(
                 children: [
                   const CuAction(title: "使用指南"),

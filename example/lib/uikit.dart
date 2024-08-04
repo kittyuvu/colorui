@@ -24,11 +24,7 @@ class _UIAppState extends State<UIApp> {
   Widget px({required Widget child, double? top}) {
     double $top = top ?? 0;
     return Padding(
-      padding: EdgeInsets.only(
-        left: 24,
-        right: 24,
-        top: $top,
-      ),
+      padding: EdgeInsets.only(top: $top).$LR(24),
       child: child,
     );
   }
@@ -73,7 +69,7 @@ class _UIAppState extends State<UIApp> {
                   ),
                 ),
               ),
-              const SizedBox(height: 24),
+              24.hSpace,
             ],
           );
         }).toList(),
@@ -106,7 +102,7 @@ class CuSimpleCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: 8.$edgeAll,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -116,14 +112,11 @@ class CuSimpleCard extends StatelessWidget {
                     children: [
                       Text(
                         data.title,
-                        style: const TextStyle(
-                          fontSize: 18,
-                          color: Colors.white,
-                        ),
+                        style: const TextStyle().$xl.$white,
                       ),
-                      const Padding(
-                        padding: EdgeInsets.symmetric(vertical: 4),
-                        child: CuSimpleLine(
+                      Padding(
+                        padding: 4.$edgeTB,
+                        child: const CuSimpleLine(
                           width: double.infinity,
                           mainWidth: .42,
                           size: 1.5,
@@ -134,16 +127,13 @@ class CuSimpleCard extends StatelessWidget {
                       ),
                       Text(
                         data.subTitle.capitalize,
-                        style: const TextStyle(
-                          fontSize: 14,
-                          color: Colors.white,
-                        ),
+                        style: const TextStyle().$df.$white,
                       ),
                     ],
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 8),
+                  padding: 8.$edgeT,
                   child: Builder(builder: (context) {
                     return Icon(data.icon, color: Colors.white);
                   }),

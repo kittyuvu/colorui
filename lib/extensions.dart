@@ -1,7 +1,10 @@
 // https://pub.dev/packages/awesome_extensions
+import 'package:colorui/colors.dart';
 import 'package:colorui/utils.dart' as utils;
+import 'package:colorui/var.dart';
 import 'dart:io' show Platform;
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 extension JSArray<T> on List<T> {
   /// https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
@@ -144,7 +147,164 @@ extension CuColorUtil on Color {
   }
 }
 
-extension CuSpaceWidgetDouble on double {
+extension CuTextStyle on TextStyle {
+  /// |> 10.0
+  /// 说明文本，标签文字或关注度低的文字
+  TextStyle get $xs => copyWith(fontSize: CuFontSize.xs);
+
+  /// |> 12.0
+  /// 页面辅助信息，次级内容等
+  TextStyle get $sm => copyWith(fontSize: CuFontSize.sm);
+
+  /// |> 14.0
+  /// 页面默认字号，用于摘要或阅读文本
+  TextStyle get $df => copyWith(fontSize: CuFontSize.df);
+
+  /// |> 16.0
+  /// 页面三级标题，首要层级显示内容
+  TextStyle get $lg => copyWith(fontSize: CuFontSize.lg);
+
+  /// |> 18.0
+  /// 页面二级标题，用于结果页等单一信息页
+  TextStyle get $xl => copyWith(fontSize: CuFontSize.xl);
+
+  /// |> 22.0
+  /// 页面一级标题,或者用于金额数字等信息
+  TextStyle get $xxl => copyWith(fontSize: CuFontSize.xxl);
+
+  /// |> FontWeight.bold
+  TextStyle get $bold => copyWith(fontWeight: FontWeight.bold);
+
+  /// |> FontWeight.w600
+  TextStyle get $normal => copyWith(fontWeight: FontWeight.normal);
+
+  /// 嫣红
+  TextStyle get $red => copyWith(color: CuColors.red);
+
+  /// 桔橙
+  TextStyle get $orange => copyWith(color: CuColors.orange);
+
+  /// 明黄
+  TextStyle get $yellow => copyWith(color: CuColors.yellow);
+
+  /// 橄榄
+  TextStyle get $olive => copyWith(color: CuColors.olive);
+
+  /// 森绿
+  TextStyle get $green => copyWith(color: CuColors.green);
+
+  /// 天青
+  TextStyle get $cyan => copyWith(color: CuColors.cyan);
+
+  /// 海蓝
+  TextStyle get $blue => copyWith(color: CuColors.blue);
+
+  /// 姹紫
+  TextStyle get $purple => copyWith(color: CuColors.purple);
+
+  /// 木槿
+  TextStyle get $mauve => copyWith(color: CuColors.mauve);
+
+  /// 桃粉
+  TextStyle get $pink => copyWith(color: CuColors.pink);
+
+  /// 棕褐
+  TextStyle get $brown => copyWith(color: CuColors.brown);
+
+  /// 玄灰
+  TextStyle get $grey => copyWith(color: CuColors.grey);
+
+  /// 草灰
+  TextStyle get $gray => copyWith(color: CuColors.gray);
+
+  /// 墨黑
+  TextStyle get $black => copyWith(color: CuColors.black);
+
+  /// 雅白
+  TextStyle get $white => copyWith(color: CuColors.white);
+
+  /// 嫣红(亮色)
+  TextStyle get $redLight => copyWith(color: CuColors.redLight);
+
+  /// 桔橙(亮色)
+  TextStyle get $orangeLight => copyWith(color: CuColors.orangeLight);
+
+  /// 明黄(亮色)
+  TextStyle get $yellowLight => copyWith(color: CuColors.yellowLight);
+
+  /// 橄榄(亮色)
+  TextStyle get $oliveLight => copyWith(color: CuColors.oliveLight);
+
+  /// 森绿(亮色)
+  TextStyle get $greenLight => copyWith(color: CuColors.greenLight);
+
+  /// 天青(亮色)
+  TextStyle get $cyanLight => copyWith(color: CuColors.cyanLight);
+
+  /// 海蓝(亮色)
+  TextStyle get $blueLight => copyWith(color: CuColors.blueLight);
+
+  /// 姹紫(亮色)
+  TextStyle get $purpleLight => copyWith(color: CuColors.purpleLight);
+
+  /// 木槿(亮色)
+  TextStyle get $mauveLight => copyWith(color: CuColors.mauveLight);
+
+  /// 桃粉(亮色)
+  TextStyle get $pinkLight => copyWith(color: CuColors.pinkLight);
+
+  /// 棕褐(亮色)
+  TextStyle get $brownLight => copyWith(color: CuColors.brownLight);
+
+  /// 玄灰(亮色)
+  TextStyle get $greyLight => copyWith(color: CuColors.greyLight);
+}
+
+extension CuIntEdgeInsets on int {
+  EdgeInsetsGeometry get $edgeAll => EdgeInsets.all(toDouble());
+  EdgeInsetsGeometry get $edgeL => EdgeInsets.only(left: toDouble());
+  EdgeInsetsGeometry get $edgeR => EdgeInsets.only(right: toDouble());
+  EdgeInsetsGeometry get $edgeT => EdgeInsets.only(top: toDouble());
+  EdgeInsetsGeometry get $edgeB => EdgeInsets.only(bottom: toDouble());
+  EdgeInsetsGeometry get $edgeTB =>
+      EdgeInsets.only(top: toDouble(), bottom: toDouble());
+  EdgeInsetsGeometry get $edgeLR =>
+      EdgeInsets.only(left: toDouble(), right: toDouble());
+}
+
+extension CuDoubleEdgeInsets on double {
+  EdgeInsetsGeometry get $edgeAll => EdgeInsets.all(this);
+  EdgeInsetsGeometry get $edgeL => EdgeInsets.only(left: this);
+  EdgeInsetsGeometry get $edgeR => EdgeInsets.only(right: this);
+  EdgeInsetsGeometry get $edgeT => EdgeInsets.only(top: this);
+  EdgeInsetsGeometry get $edgeB => EdgeInsets.only(bottom: this);
+  EdgeInsetsGeometry get $edgeTB => EdgeInsets.only(top: this, bottom: this);
+  EdgeInsetsGeometry get $edgeLR => EdgeInsets.only(left: this, right: this);
+}
+
+extension CuBorderRadiusCircularWithDouble on double {
+  /// 圆角
+  BorderRadiusGeometry get $radiusCircle => BorderRadius.circular(this);
+}
+
+extension CuBorderRadiusCircularWithInt on int {
+  /// 圆角
+  BorderRadiusGeometry get $radiusCircle => BorderRadius.circular(toDouble());
+}
+
+extension CuIntSpaceWidget on int {
+  /// Return self height spacing placeholder widget
+  Widget get hSpace {
+    return SizedBox(height: toDouble());
+  }
+
+  /// Return self width spacing placeholder widget
+  Widget get wSpace {
+    return SizedBox(width: toDouble());
+  }
+}
+
+extension CuDoubleSpaceWidget on double {
   /// Return self height spacing placeholder widget
   Widget get hSpace {
     return SizedBox(height: this);
@@ -153,5 +313,51 @@ extension CuSpaceWidgetDouble on double {
   /// Return self width spacing placeholder widget
   Widget get wSpace {
     return SizedBox(width: this);
+  }
+}
+
+extension CuEdgeInsetsSetter on EdgeInsets {
+  /// top | bottom
+  EdgeInsets $TB(double value) => copyWith(top: value, bottom: value);
+
+  /// left | right
+  EdgeInsets $LR(double value) => copyWith(left: value, right: value);
+
+  /// left
+  EdgeInsets $L(double value) => copyWith(left: value);
+
+  /// right
+  EdgeInsets $R(double value) => copyWith(right: value);
+
+  /// top
+  EdgeInsets $T(double value) => copyWith(top: value);
+
+  /// bottom
+  EdgeInsets $B(double value) => copyWith(bottom: value);
+}
+
+extension CuEdgeInsetsListWithInt on List<int> {
+  /// [0] => top, bottom
+  ///
+  /// [1] => left, right
+  EdgeInsets get $edge {
+    assert(length == 2);
+    return EdgeInsets.symmetric(
+      vertical: this[0].toDouble(),
+      horizontal: this[1].toDouble(),
+    );
+  }
+}
+
+extension CuEdgeInsetsListWithDouble on List<double> {
+  /// [0] => top, bottom
+  ///
+  /// [1] => left, right
+  EdgeInsets get $edge {
+    assert(length == 2);
+    return EdgeInsets.symmetric(
+      vertical: this[0],
+      horizontal: this[1],
+    );
   }
 }

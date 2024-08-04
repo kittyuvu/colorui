@@ -111,12 +111,9 @@ class BackgroundPageState extends State<BackgroundPage> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const Text(
+                Text(
                   "AKA: 文本颜色",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: CuColors.pink,
-                  ),
+                  style: const TextStyle().$pink.$bold,
                 ),
                 buildColors(kColors, "背景色"),
                 hSpacing,

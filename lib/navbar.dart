@@ -54,7 +54,7 @@ class CuNavbar extends StatelessWidget implements PreferredSizeWidget {
                   }
                 },
                 child: Padding(
-                  padding: EdgeInsets.only(left: backSpacing),
+                  padding: backSpacing.$edgeL,
                   child: SizedBox(
                     height: double.infinity,
                     child: Builder(

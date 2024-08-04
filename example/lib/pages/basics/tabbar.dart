@@ -60,7 +60,7 @@ class _TabbarPageState extends State<TabbarPage> {
         appBar: const CuNavbar(title: "底部导航"),
         backgroundColor: CuColors.greyLight,
         body: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: 8.$edgeAll,
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -127,7 +127,7 @@ class _TabbarPageState extends State<TabbarPage> {
                     ),
                   },
                 ),
-                9.0.hSpace,
+                9.hSpace,
                 Row(
                   children: [
                     const Text("图片大小: "),
@@ -291,7 +291,7 @@ class _TabbarPageState extends State<TabbarPage> {
                           height: 40,
                           decoration: BoxDecoration(
                             color: CuColors.blue,
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: 20.$radiusCircle,
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -301,18 +301,15 @@ class _TabbarPageState extends State<TabbarPage> {
                                 height: 24,
                                 decoration: BoxDecoration(
                                   color: CuColors.white,
-                                  borderRadius: BorderRadius.circular(4),
+                                  borderRadius: 4.$radiusCircle,
                                 ),
                                 child: const Icon(
                                   CuIcons.add,
                                   color: Colors.blue,
                                 ),
                               ),
-                              5.0.wSpace,
-                              const Text(
-                                "发布日常",
-                                style: TextStyle(color: Colors.white),
-                              ),
+                              5.wSpace,
+                              Text("发布日常", style: const TextStyle().$white),
                             ],
                           ),
                         ),
@@ -328,7 +325,7 @@ class _TabbarPageState extends State<TabbarPage> {
                     ),
                   },
                 ),
-                120.0.hSpace,
+                120.hSpace,
               ],
             ),
           ),

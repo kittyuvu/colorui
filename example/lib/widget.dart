@@ -13,13 +13,13 @@ const kBgIMG = "https://beta3.color-ui.com/01.jpeg";
 ///   |
 ///   v
 /// ```
-var hSpacing = const SizedBox(height: 12);
+var hSpacing = 12.hSpace;
 
 /// 12px
 /// ```
 /// < - - - >
 /// ```
-var wSpacing = const SizedBox(width: 12);
+var wSpacing = 12.wSpace;
 
 class UIMainLayout extends StatelessWidget {
   const UIMainLayout({
@@ -51,11 +51,11 @@ class UIMainLayout extends StatelessWidget {
             clipBehavior: Clip.hardEdge,
             decoration: BoxDecoration(
               color: CuColors.white,
-              borderRadius: BorderRadius.circular(12),
-              boxShadow: [
+              borderRadius: 12.$radiusCircle,
+              boxShadow: const [
                 BoxShadow(
-                  color: const Color(0x00afa6a6).withOpacity(1),
-                  offset: const Offset(1, 1),
+                  color: Color(0x00afa6a6),
+                  offset: Offset(1, 1),
                   blurRadius: 2,
                   spreadRadius: 1,
                 )
@@ -87,7 +87,7 @@ class CuAction extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: color,
-        borderRadius: BorderRadius.circular(radius),
+        borderRadius: radius.$radiusCircle,
       ),
       width: 6,
       height: 18,
@@ -107,11 +107,11 @@ class CuAction extends StatelessWidget {
           child: Row(
             children: [
               left,
-              const SizedBox(width: 8),
+              8.wSpace,
               Expanded(
                 child: Text(
                   title,
-                  style: const TextStyle(fontSize: 18),
+                  style: const TextStyle().$xl,
                 ),
               ),
             ],
