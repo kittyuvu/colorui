@@ -150,27 +150,27 @@ extension CuColorUtil on Color {
 extension CuTextStyle on TextStyle {
   /// |> 10.0
   /// 说明文本，标签文字或关注度低的文字
-  TextStyle get $xs => copyWith(fontSize: CuFontSize.xs);
+  TextStyle get $xs => copyWith(fontSize: CuFontSizes.xs);
 
   /// |> 12.0
   /// 页面辅助信息，次级内容等
-  TextStyle get $sm => copyWith(fontSize: CuFontSize.sm);
+  TextStyle get $sm => copyWith(fontSize: CuFontSizes.sm);
 
   /// |> 14.0
   /// 页面默认字号，用于摘要或阅读文本
-  TextStyle get $df => copyWith(fontSize: CuFontSize.df);
+  TextStyle get $df => copyWith(fontSize: CuFontSizes.df);
 
   /// |> 16.0
   /// 页面三级标题，首要层级显示内容
-  TextStyle get $lg => copyWith(fontSize: CuFontSize.lg);
+  TextStyle get $lg => copyWith(fontSize: CuFontSizes.lg);
 
   /// |> 18.0
   /// 页面二级标题，用于结果页等单一信息页
-  TextStyle get $xl => copyWith(fontSize: CuFontSize.xl);
+  TextStyle get $xl => copyWith(fontSize: CuFontSizes.xl);
 
   /// |> 22.0
   /// 页面一级标题,或者用于金额数字等信息
-  TextStyle get $xxl => copyWith(fontSize: CuFontSize.xxl);
+  TextStyle get $xxl => copyWith(fontSize: CuFontSizes.xxl);
 
   /// |> FontWeight.bold
   TextStyle get $bold => copyWith(fontWeight: FontWeight.bold);

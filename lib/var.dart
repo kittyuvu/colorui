@@ -1,4 +1,4 @@
-class CuFontSize {
+class CuFontSizes {
   /// 说明文本，标签文字或关注度低的文字
   static const xs = 10.0;
 

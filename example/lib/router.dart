@@ -3,6 +3,7 @@ import 'package:example/pages/basics/background.dart';
 import 'package:example/pages/basics/navbar.dart';
 import 'package:example/pages/basics/system.dart';
 import 'package:example/pages/basics/tabbar.dart';
+import 'package:example/pages/basics/text.dart';
 import 'package:example/pages/basics/theme.dart';
 import 'package:example/uikit.dart';
 import 'package:go_router/go_router.dart';
@@ -41,9 +42,14 @@ final $router = GoRouter(
           builder: (context, state) => const TabbarPage(),
         ),
         GoRoute(
-          name: "bg",
-          path: "bg",
+          name: "background",
+          path: "background",
           builder: (context, state) => const BackgroundPage(),
+        ),
+        GoRoute(
+          name: "text",
+          path: "text",
+          builder: (context, state) => const TextPage(),
         ),
       ],
     ),
