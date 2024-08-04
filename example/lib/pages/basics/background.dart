@@ -59,22 +59,31 @@ class BackgroundPage extends StatefulWidget {
 }
 
 class BackgroundPageState extends State<BackgroundPage> {
-  buildBlock(Map<String, dynamic> item) {
+  Widget buildBlock(Map<String, dynamic> item) {
+    String title = item["title"];
+    var $color = item["color"];
+    Color? color;
+    LinearGradient? gradient;
+    if ($color is Color) {
+      color = $color;
+    } else if ($color is LinearGradient) {
+      gradient = $color;
+    }
     return SizedBox(
       child: Column(
         children: [
           Container(
             decoration: BoxDecoration(
-              color: item["color"] as Color,
-              // FIXME: Whhhhhhy not work with circular?
               borderRadius: BorderRadius.circular(12),
+              color: color,
+              gradient: gradient,
             ),
             clipBehavior: Clip.hardEdge,
-            width: 42,
+            width: 120,
             height: 120,
           ),
           hSpacing,
-          Text(item["title"] as String)
+          Text(title),
         ],
       ),
     );
@@ -85,36 +94,9 @@ class BackgroundPageState extends State<BackgroundPage> {
       CuAction(title: title),
       hSpacing,
       Wrap(
-        spacing: 12,
+        spacing: 9,
         runSpacing: 6,
-        children: data.map((item) {
-          return Builder(
-            builder: (context) {
-              String title = item["title"];
-              var color = item["color"];
-              Color? cr;
-              LinearGradient? lg;
-              if (color is Color) {
-                cr = color;
-              } else if (color is LinearGradient) {
-                lg = color;
-              }
-              return SizedBox(
-                child: Column(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(color: cr, gradient: lg),
-                      width: 120,
-                      height: 88,
-                    ),
-                    hSpacing,
-                    Text(title),
-                  ],
-                ),
-              );
-            },
-          );
-        }).toList(),
+        children: data.map(buildBlock).toList(),
       )
     ]);
   }

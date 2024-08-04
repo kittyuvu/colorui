@@ -33,8 +33,8 @@ class UIMainLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(_cx ?? context).size.width;
-    final height = MediaQuery.of(_cx ?? context).size.height;
+    final width = (_cx ?? context).width;
+    final height = (_cx ?? context).height;
     if (width > kMaxScreenWidth) {
       return Container(
         width: double.infinity,
@@ -109,7 +109,11 @@ class CuAction extends StatelessWidget {
               left,
               const SizedBox(width: 8),
               Expanded(
-                  child: Text(title, style: const TextStyle(fontSize: 18))),
+                child: Text(
+                  title,
+                  style: const TextStyle(fontSize: 18),
+                ),
+              ),
             ],
           ),
         ),

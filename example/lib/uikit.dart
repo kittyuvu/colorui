@@ -1,5 +1,4 @@
 import 'package:colorui/colorui.dart';
-import 'package:example/extensions.dart';
 import 'package:example/menus.dart';
 import 'package:example/widget.dart';
 import 'package:flutter/material.dart';
