@@ -53,6 +53,7 @@ Map<String, List<MenuItem>> kMenus = {
       subTitle: 'background',
       icon: CuIcons.palette,
       color: CuLinearGradient.orange,
+      name: "bg",
     ),
     MenuItem(
       title: "文本",
