@@ -1,6 +1,7 @@
 import 'package:colorui/colorui.dart';
 import 'package:example/pages/basics/navbar.dart';
 import 'package:example/pages/basics/system.dart';
+import 'package:example/pages/basics/tabbar.dart';
 import 'package:example/pages/basics/theme.dart';
 import 'package:example/uikit.dart';
 import 'package:go_router/go_router.dart';
@@ -32,6 +33,11 @@ final $router = GoRouter(
           name: "navbar",
           path: "navbar",
           builder: (context, state) => const NavbarPage(),
+        ),
+        GoRoute(
+          name: "tabbar",
+          path: "tabbar",
+          builder: (context, state) => const TabbarPage(),
         ),
       ],
     ),

@@ -42,6 +42,13 @@ Map<String, List<MenuItem>> kMenus = {
       name: "navbar",
     ),
     MenuItem(
+      title: "底部导航",
+      subTitle: 'tabbar',
+      icon: CuIcons.box,
+      color: CuLinearGradient.blue,
+      name: "tabbar",
+    ),
+    MenuItem(
       title: "背景",
       subTitle: 'background',
       icon: CuIcons.palette,
