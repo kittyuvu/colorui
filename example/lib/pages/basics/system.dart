@@ -38,7 +38,7 @@ class _SystemPageState extends State<SystemPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CuAction.text("简介"),
+                const CuTitle(title: "简介"),
                 6.hSpace,
                 Text(kInfo),
                 hSpacing,
@@ -46,7 +46,7 @@ class _SystemPageState extends State<SystemPage> {
                   "Flutter 版本未实现完整功能~",
                   style: const TextStyle().$bold.$pink.$lg,
                 ),
-                Divider(color: CuColors.grey.withOpacity(.24)),
+                Divider(color: CuColors.grey.$opacity(.24)),
                 hSpacing,
                 Column(
                   mainAxisSize: MainAxisSize.min,
@@ -68,7 +68,7 @@ class _SystemPageState extends State<SystemPage> {
                         padding: [4, 24].$edge,
                         decoration: BoxDecoration(
                           border:
-                              Border.all(color: CuColors.grey.withOpacity(.24)),
+                              Border.all(color: CuColors.grey.$opacity(.24)),
                           borderRadius: 4.$radiusCircle,
                         ),
                         child: Row(

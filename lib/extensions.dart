@@ -7,7 +7,6 @@ import 'package:colorui/utils.dart' as utils;
 import 'package:colorui/var.dart';
 import 'dart:io' show Platform;
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 extension JSArray<T> on List<T> {
   /// https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
@@ -245,6 +244,16 @@ extension CuStringUtil on String {
   List<String> get $toLines {
     return split("\n");
   }
+
+  /// Return [Text] widget
+  ///
+  /// Example:
+  /// ```dart
+  /// "你好世界".$tx(align: TextAlign.center); // Text("你好世界", textAlign: TextAlign.center)
+  /// ```
+  Text $tx({TextStyle? style, align = TextAlign.start}) {
+    return Text(this, style: style, textAlign: align);
+  }
 }
 
 extension CuColorUtil on Color {
@@ -254,9 +263,27 @@ extension CuColorUtil on Color {
   /// ```dart
   /// Color(0xff000000).toHex; // "#000000"
   /// ```
-  String get toHex {
+  String get $hex {
     return utils.colorToHex(this);
   }
+
+  /// ```dart
+  /// "#fff".$color.$opacity(0.5); // Color(0xff000000).withOpacity(0.5)
+  /// ```
+  Color $opacity(double opacity) => withOpacity(opacity);
+
+  /// Return BoxBorder.all(color: this)
+  ///
+  /// Example:
+  /// ```dart
+  /// "#fff".$color.$border; // Border.all(color: Color(0xfff))
+  /// ```
+  BoxBorder get $border => Border.all(color: this);
+
+  /// ```dart
+  /// CuColors.gray.$opacity(.24).$divider
+  /// ```
+  Divider get $divider => Divider(color: this);
 }
 
 extension CuTextStyle on TextStyle {

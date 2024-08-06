@@ -263,11 +263,11 @@ class _AvatarPageState extends State<AvatarPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CuAction.text("简介"),
+                const CuTitle(title: "简介"),
                 12.hSpace,
                 const Text("头像组件,可以适配文字,图片以及图标。"),
                 18.hSpace,
-                CuAction.text("形状"),
+                const CuTitle(title: "形状"),
                 hSpacing,
                 Row(
                   children: [
@@ -276,7 +276,7 @@ class _AvatarPageState extends State<AvatarPage> {
                       decoration: BoxDecoration(
                         color: CuColors.white,
                         border: Border.all(
-                            color: CuColors.gray.withOpacity(.42), width: 1),
+                            color: CuColors.gray.$opacity(.42), width: 1),
                         borderRadius: 4.$radiusCircle,
                       ),
                       child: const Text("radius,round,ellipse"),
@@ -301,7 +301,7 @@ class _AvatarPageState extends State<AvatarPage> {
                   }).toList(),
                 ),
                 18.hSpace,
-                CuAction.text("大小"),
+                const CuTitle(title: "大小"),
                 Row(
                   children: kSize.map((item) {
                     return Row(
@@ -326,7 +326,7 @@ class _AvatarPageState extends State<AvatarPage> {
                   }).toList(),
                 ),
                 hSpacing,
-                CuAction.text("背景颜色"),
+                const CuTitle(title: "背景颜色"),
                 hSpacing,
                 Row(
                   children: kBg.map((item) {
@@ -352,7 +352,7 @@ class _AvatarPageState extends State<AvatarPage> {
                   }).toList(),
                 ),
                 hSpacing,
-                CuAction.text("图像"),
+                const CuTitle(title: "图像"),
                 hSpacing,
                 SizedBox(
                   width: double.infinity,
@@ -362,11 +362,11 @@ class _AvatarPageState extends State<AvatarPage> {
                     style: const TextStyle().$blue.$lg.$bold,
                   ),
                 ),
-                Divider(color: CuColors.gray.withOpacity(.2)),
+                Divider(color: CuColors.gray.$opacity(.2)),
                 hSpacing,
                 buildZeder(),
                 hSpacing,
-                CuAction.text("图标"),
+                const CuTitle(title: "图标"),
                 hSpacing,
                 Row(
                   children: kShape.map((item) {
@@ -387,7 +387,7 @@ class _AvatarPageState extends State<AvatarPage> {
                   }).toList(),
                 ),
                 24.hSpace,
-                CuAction.text("角标(逼死强迫症)"),
+                const CuTitle(title: "角标(逼死强迫症)"),
                 24.hSpace,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

@@ -10,3 +10,4 @@ export 'var.dart';
 export 'shadow.dart';
 
 export 'avatar.dart';
+export 'title.dart';

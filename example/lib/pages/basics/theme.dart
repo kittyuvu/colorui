@@ -17,9 +17,9 @@ class ThemePageState extends State<ThemePage> {
   Widget build(BuildContext context) {
     late Color bg;
     if (darkEnable) {
-      bg = CuColors.black.withOpacity(.88);
+      bg = CuColors.black.$opacity(.88);
     } else {
-      bg = CuColors.grey.withOpacity(.42);
+      bg = CuColors.grey.$opacity(.42);
     }
     return UIMainLayout(
       child: Scaffold(
@@ -58,7 +58,7 @@ class ThemePageState extends State<ThemePage> {
                       width: 95,
                       height: 160,
                       active: darkEnable,
-                      backgroundColor: CuColors.black.withOpacity(.88),
+                      backgroundColor: CuColors.black.$opacity(.88),
                       xColor: CuColors.white,
                     ),
                   ),

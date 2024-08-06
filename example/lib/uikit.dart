@@ -38,10 +38,7 @@ class _UIAppState extends State<UIApp> {
             children: [
               px(
                 top: 24,
-                child: CuAction(
-                  title: item.key,
-                  color: CuColors.blue,
-                ),
+                child: CuTitle(title: item.key, iconColor: CuColors.blue),
               ),
               px(
                 top: 10,

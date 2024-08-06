@@ -64,7 +64,7 @@ class _TabbarPageState extends State<TabbarPage> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                CuAction.text("基本用法"),
+                const CuTitle(title: "基本用法"),
                 hSpacing,
                 CuTabbar<String>(
                   iconSize: 20,
@@ -94,7 +94,7 @@ class _TabbarPageState extends State<TabbarPage> {
                     setState(() {});
                   },
                 ),
-                CuAction.text("图片用法"),
+                const CuTitle(title: "图片用法"),
                 hSpacing,
                 CuTabbar(
                   selected: menu1Selected,
@@ -193,7 +193,7 @@ class _TabbarPageState extends State<TabbarPage> {
                   ],
                 ),
                 hSpacing,
-                CuAction.text("样式"),
+                const CuTitle(title: "样式"),
                 hSpacing,
                 CuTabbar(
                   selected: menu1Selected,
@@ -268,7 +268,7 @@ class _TabbarPageState extends State<TabbarPage> {
                   ],
                 ),
                 hSpacing,
-                CuAction.text("自定义渲染"),
+                const CuTitle(title: "自定义渲染"),
                 hSpacing,
                 CuTabbar(
                   onItemTap: $tap,

@@ -41,7 +41,7 @@ class UIMainLayout extends StatelessWidget {
         width: double.infinity,
         height: double.infinity,
         decoration: const BoxDecoration(
-          color: Color(0xff0ca5e9),
+          color: CuColors.blue,
           image: DecorationImage(
             fit: BoxFit.cover,
             image: NetworkImage(kBgIMG),
@@ -63,58 +63,5 @@ class UIMainLayout extends StatelessWidget {
       );
     }
     return child;
-  }
-}
-
-class CuAction extends StatelessWidget {
-  const CuAction({
-    super.key,
-    required this.title,
-    this.color = CuColors.blue,
-    this.radius = 12,
-  });
-  final String title;
-  final Color color;
-  final double radius;
-
-  factory CuAction.text(String title) => CuAction(title: title);
-
-  Widget get left {
-    return Container(
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: radius.$radiusCircle,
-      ),
-      width: 6,
-      height: 18,
-    );
-  }
-
-  Widget get right {
-    return const SizedBox.shrink();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Expanded(
-          child: Row(
-            children: [
-              left,
-              8.wSpace,
-              Expanded(
-                child: Text(
-                  title,
-                  style: const TextStyle().$xl,
-                ),
-              ),
-            ],
-          ),
-        ),
-        right,
-      ],
-    );
   }
 }

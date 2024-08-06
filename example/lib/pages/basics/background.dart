@@ -91,7 +91,7 @@ class BackgroundPageState extends State<BackgroundPage> {
 
   Widget buildColors(ReListMap data, String title, {int count = 2}) {
     return Column(children: [
-      CuAction.text(title),
+      CuTitle(title: title),
       hSpacing,
       Wrap(
         spacing: 9,

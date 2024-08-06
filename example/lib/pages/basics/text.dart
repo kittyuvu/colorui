@@ -58,7 +58,7 @@ class _TextPageState extends State<TextPage> {
             padding: 12.$edgeAll,
             child: Column(
               children: [
-                CuAction.text("尺寸示例"),
+                const CuTitle(title: "尺寸示例"),
                 hSpacing,
                 Expanded(
                   child: Container(

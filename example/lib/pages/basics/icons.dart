@@ -484,7 +484,7 @@ class _IconsPageState extends State<IconsPage> {
           padding: 12.$edgeAll,
           child: Column(
             children: [
-              CuAction.text("图标列表(${kIcons.length})"),
+              CuTitle(title: "图标列表(${kIcons.length})"),
               hSpacing,
               Expanded(
                 child: SingleChildScrollView(
@@ -501,7 +501,7 @@ class _IconsPageState extends State<IconsPage> {
                           color: CuColors.white,
                           borderRadius: 12.$radiusCircle,
                           border: Border.all(
-                            color: CuColors.grey.withOpacity(.24),
+                            color: CuColors.grey.$opacity(.24),
                           ),
                         ),
                         child: Center(

@@ -46,7 +46,7 @@ class _NavbarPageState extends State<NavbarPage> {
               padding: 12.$edgeAll,
               child: Column(
                 children: [
-                  CuAction.text("使用指南"),
+                  const CuTitle(title: "使用指南"),
                   hSpacing,
                   Column(
                     children: [

@@ -115,10 +115,10 @@ class CuAvatar extends StatelessWidget {
   }
 
   Widget get $badge {
-    var offset = badgeOffset ?? const Size(0,0);
+    var offset = badgeOffset ?? const Size(0, 0);
     var w = offset.width;
     var h = offset.height;
-    late Widget $badge;// stupid!
+    late Widget $badge; // stupid!
     if (badgePosition == CuAvatarBadgePostion.topLeft) {
       $badge = Positioned(
         top: h,

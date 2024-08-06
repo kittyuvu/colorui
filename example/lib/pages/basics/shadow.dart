@@ -26,7 +26,7 @@ class _ShadowPageState extends State<ShadowPage> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                CuAction.text("阴影尺寸"),
+                const CuTitle(title: "阴影尺寸"),
                 hSpacing,
                 Padding(
                   padding: 8.$edgeLR,
@@ -50,7 +50,7 @@ class _ShadowPageState extends State<ShadowPage> {
                   ),
                 ),
                 hSpacing,
-                CuAction.text("支持颜色和自定义透明度"),
+                const CuTitle(title: "支持颜色和自定义透明度"),
                 hSpacing,
                 Padding(
                   padding: 8.$edgeAll,

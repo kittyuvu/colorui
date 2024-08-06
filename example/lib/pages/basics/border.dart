@@ -20,7 +20,7 @@ class _BorderPageState extends State<BorderPage> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                CuAction.text("边框尺寸"),
+                const CuTitle(title: "边框尺寸"),
                 hSpacing,
                 const Text("Flutter 中默认就支持边框, 或许可以写扩展来简单化这部分")
               ],
