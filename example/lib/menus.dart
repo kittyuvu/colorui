@@ -2,7 +2,10 @@ import 'package:colorui/colorui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-List<BoxShadow> $$lg({required Color color}) => CuBoxShadow.lg$(color: color, opacity: .66);
+List<BoxShadow> $$lg({required Color color}) => CuBoxShadow.lg$(
+      color: color,
+      opacity: .66,
+    );
 
 class MenuItem {
   MenuItem({
@@ -104,6 +107,7 @@ Map<String, List<MenuItem>> kMenus = {
       icon: CuIcons.avatar,
       color: CuLinearGradient.brown,
       shadow: $$lg(color: CuColors.brown),
+      name: "avatar",
     ),
     MenuItem(
       title: "标题",

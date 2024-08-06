@@ -1,8 +1,11 @@
 // https://gist.github.com/d1y/64b2098dac30be4d47aaac2f1a7d8149
 
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
 class CuColors {
+  /// 透明
+  static const $ = Color(0x00000000);
+
   /// 嫣红
   static const red = Color(0xffe54d42);
 

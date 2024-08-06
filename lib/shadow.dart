@@ -2,11 +2,6 @@ import 'package:flutter/widgets.dart';
 
 enum CuBoxShadowSize { sm, df, lg }
 
-// copy by color-ui
-// --ui-Shadow: 0 .5em 1em rgba(0, 0, 0, 0.15);
-// --ui-Shadow-sm: 0 .125em .25em rgba(0, 0, 0, 0.075);
-// --ui-Shadow-lg: 0 1em 3em rgba(0, 0, 0, 0.175);
-
 const kBoxShadowDefualtDFOpacity = 0.15;
 const kBoxShadowDefaultSMOpacity = 0.075;
 const kBoxShadowDefaultLGOpacity = 0.175;

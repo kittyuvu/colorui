@@ -91,7 +91,7 @@ class BackgroundPageState extends State<BackgroundPage> {
 
   Widget buildColors(ReListMap data, String title, {int count = 2}) {
     return Column(children: [
-      CuAction(title: title),
+      CuAction.text(title),
       hSpacing,
       Wrap(
         spacing: 9,
@@ -105,7 +105,7 @@ class BackgroundPageState extends State<BackgroundPage> {
   Widget build(BuildContext context) {
     return UIMainLayout(
       child: Scaffold(
-        appBar: const CuNavbar(title: "背景"),
+        appBar: const CuNavbar(titleText: "背景"),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: SingleChildScrollView(

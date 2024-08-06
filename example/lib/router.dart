@@ -8,6 +8,7 @@ import 'package:example/pages/basics/system.dart';
 import 'package:example/pages/basics/tabbar.dart';
 import 'package:example/pages/basics/text.dart';
 import 'package:example/pages/basics/theme.dart';
+import 'package:example/pages/views/avatar.dart';
 import 'package:example/uikit.dart';
 import 'package:go_router/go_router.dart';
 
@@ -68,6 +69,11 @@ final $router = GoRouter(
           name: "border",
           path: "border",
           builder: (context, state) => const BorderPage(),
+        ),
+        GoRoute(
+          name: "avatar",
+          path: "avatar",
+          builder: (context, state) => const AvatarPage(),
         ),
       ],
     ),

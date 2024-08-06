@@ -14,13 +14,13 @@ class _BorderPageState extends State<BorderPage> {
   Widget build(BuildContext context) {
     return UIMainLayout(
       child: Scaffold(
-        appBar: const CuNavbar(title: "边框"),
+        appBar: const CuNavbar(titleText: "边框"),
         body: Padding(
           padding: 12.$edgeAll,
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const CuAction(title: "边框尺寸"),
+                CuAction.text("边框尺寸"),
                 hSpacing,
                 const Text("Flutter 中默认就支持边框, 或许可以写扩展来简单化这部分")
               ],

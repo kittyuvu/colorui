@@ -8,3 +8,5 @@ export 'navbar.dart';
 export 'tabbar.dart';
 export 'var.dart';
 export 'shadow.dart';
+
+export 'avatar.dart';

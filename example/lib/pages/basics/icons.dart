@@ -479,12 +479,12 @@ class _IconsPageState extends State<IconsPage> {
   Widget build(BuildContext context) {
     return UIMainLayout(
       child: Scaffold(
-        appBar: const CuNavbar(title: "图标"),
+        appBar: const CuNavbar(titleText: "图标"),
         body: Padding(
           padding: 12.$edgeAll,
           child: Column(
             children: [
-              CuAction(title: "图标列表(${kIcons.length})"),
+              CuAction.text("图标列表(${kIcons.length})"),
               hSpacing,
               Expanded(
                 child: SingleChildScrollView(

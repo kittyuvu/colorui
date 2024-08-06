@@ -13,12 +13,24 @@ class SystemPage extends StatefulWidget {
 }
 
 class _SystemPageState extends State<SystemPage> {
+  Widget buildGithubImage(String id) {
+    return Image.network(
+      "https://avatars.githubusercontent.com/u/$id?v=4",
+      width: 88,
+      height: 88,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return UIMainLayout(
       context: context,
       child: Scaffold(
-        appBar: const CuNavbar(title: "系统"),
+        appBar: const CuNavbar(
+          backTitle: "返回",
+          spacing: 16,
+          trailing: Icon(CuIcons.more),
+        ),
         backgroundColor: CuColors.white,
         body: SingleChildScrollView(
           child: Padding(
@@ -26,7 +38,7 @@ class _SystemPageState extends State<SystemPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const CuAction(title: "简介"),
+                CuAction.text("简介"),
                 6.hSpace,
                 Text(kInfo),
                 hSpacing,
@@ -34,11 +46,44 @@ class _SystemPageState extends State<SystemPage> {
                   "Flutter 版本未实现完整功能~",
                   style: const TextStyle().$bold.$pink.$lg,
                 ),
-                Image.network(
-                  "https://avatars.githubusercontent.com/u/45585937?v=4",
-                  width: 88,
-                  height: 88,
-                )
+                Divider(color: CuColors.grey.withOpacity(.24)),
+                hSpacing,
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        buildGithubImage("45585937"),
+                        8.wSpace,
+                        const Icon(CuIcons.arrow),
+                        8.wSpace,
+                        buildGithubImage("177179763"),
+                      ],
+                    ),
+                    18.hSpace,
+                    InkWell(
+                      mouseCursor: SystemMouseCursors.click,
+                      child: Container(
+                        padding: [4, 24].$edge,
+                        decoration: BoxDecoration(
+                          border:
+                              Border.all(color: CuColors.grey.withOpacity(.24)),
+                          borderRadius: 4.$radiusCircle,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            const Icon(CuIcons.githubCircle),
+                            4.wSpace,
+                            const Text("kittyuvu/colorui"),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),

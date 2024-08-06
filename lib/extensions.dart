@@ -1,4 +1,7 @@
 // https://pub.dev/packages/awesome_extensions
+// https://github.com/felixblaschke/supercharged
+// 和 @supermavenAI 结对编程~
+
 import 'package:colorui/colors.dart';
 import 'package:colorui/utils.dart' as utils;
 import 'package:colorui/var.dart';
@@ -8,60 +11,119 @@ import 'package:flutter/widgets.dart';
 
 extension JSArray<T> on List<T> {
   /// https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+  ///
+  /// Example:
+  /// ```dart
+  /// [1, 2, 3, 4, 5].filter((item) => item > 2); // [3, 4, 5]
+  /// ```
   List<T> filter(bool Function(T) test) {
     return where(test).toList();
   }
 
   /// https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+  ///
+  /// Example:
+  /// ```dart
+  /// [1, 2, 3, 4, 5].find((item) => item > 2); // 3
+  /// ```
   T find(bool Function(T) test, [T Function()? orElse]) {
     return firstWhere(test, orElse: orElse);
   }
 
   /// https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
+  ///
+  /// Example:
+  /// ```dart
+  /// [1, 2, 3, 4, 5].findIndex((item) => item > 2); // 2
+  /// ```
   int findIndex(bool Function(T) test, [int start = 0]) {
     return indexWhere(test, start);
   }
 
   /// https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
+  ///
+  /// Example:
+  /// ```dart
+  /// [1, 2, 3, 4, 5].includes(3); // true
+  /// ```
   bool includes(T item) {
     return contains(item);
   }
 
   /// https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/pop
+  ///
+  /// Example:
+  /// ```dart
+  /// [1, 2, 3, 4, 5].pop(); // 5
+  /// // Return [1, 2, 3, 4]
+  /// ```
   T pop() {
     return removeLast();
   }
 
   /// https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/shift
+  ///
+  /// Example:
+  /// ```dart
+  /// [1, 2, 3, 4, 5].shift(); // 1
+  /// // Return [2, 3, 4, 5]
+  /// ```
   T shift() {
     return removeAt(0);
   }
 
   /// https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift
+  ///
+  /// Example:
+  /// ```dart
+  /// [1, 2, 3, 4, 5].unshift(0); // [0, 1, 2, 3, 4, 5]
+  /// ```
   unshift(T item) {
     insert(0, item);
   }
 
   /// https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse
+  ///
+  /// Example:
+  /// ```dart
+  /// [1, 2, 3, 4, 5].reverse(); // [5, 4, 3, 2, 1]
+  /// ```
   List<T> reverse() {
     return reversed.toList();
   }
 
   /// https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/push
+  /// Example:
+  /// ```dart
+  /// [1, 2, 3, 4, 5].push(0); // [1, 2, 3, 4, 5, 0]
+  /// ```
   push(T item) {
     add(item);
   }
 
   /// https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+  ///
+  /// Alias [sublist]
   List<T> slice(int start, [int? end]) {
     return sublist(start, end);
   }
 
   /// https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/some
+  ///
+  /// Example:
+  /// ```dart
+  /// [0, 2, 3, 4, 5].some((item) => item > 2); // false
+  /// ```
   bool some(bool Function(T) test) {
     return any(test);
   }
 
+  /// Map with index
+  ///
+  /// Example:
+  /// ```dart
+  /// [1, 2, 3, 4, 5].mapWithIndex((item, idx) => item + idx); // [1, 3, 5, 7, 9]
+  /// ```
   List<R> mapWithIndex<R>(R Function(T, int i) callback) {
     List<R> result = [];
     for (int i = 0; i < length; i++) {
@@ -71,6 +133,12 @@ extension JSArray<T> on List<T> {
     return result;
   }
 
+  /// ForEach with index
+  ///
+  /// Example:
+  /// ```dart
+  /// [1, 2, 3, 4, 5].forEachWithIndex((item, idx) => print(item + idx)); // 1 3 5 7 9
+  /// ```
   forEachWithIndex(void Function(T, int idx) callback) {
     for (int i = 0; i < length; i++) {
       callback(this[i], i);
@@ -80,22 +148,36 @@ extension JSArray<T> on List<T> {
 
 extension JSString on String {
   /// https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/concat
+  ///
+  /// Example:
+  /// ```dart
+  /// "hello".concat(" world"); // "hello world"
+  /// ```
   String concat(String other) {
     return this + other;
   }
 
   /// https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/includes
+  ///
+  /// Alias [contains]
   bool includes(String other) => contains(other);
 
   /// https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/trimEnd
+  ///
+  /// Alias [trimRight]
   String trimEnd() => trimRight();
 
   /// https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/trimStart
+  ///
+  /// Alias [trimLeft]
   String trimStart() => trimLeft();
 }
 
 extension CuContext on BuildContext {
+  /// Alias [MediaQuery.of(context).size.width]
   double get width => MediaQuery.of(this).size.width;
+
+  /// Alias [MediaQuery.of(context).size.height]
   double get height => MediaQuery.of(this).size.height;
 
   bool get isDesktop =>
@@ -111,37 +193,67 @@ extension CuContext on BuildContext {
 extension CuStringUtil on String {
   /// Converts a hex, rgb, or rgba color string to Color object. Works with opacity values as well.
   ///
-  /// e.g.:
-  /// ```
-  ///       "#000"                    -> Color(0xff000000)
-  ///       "#cc3333"                 -> Color(0xffcc3333)
-  ///       "#cc3333dd"               -> Color(0xddcc3333)
-  ///       "rgb(204, 44, 81)"        -> Color(0xffcc2c51)
-  ///       "rgba(204, 44, 81, 0.20)" -> Color(0x33cc2c51)
-  ///       "rgba(204, 44, 81, 0.80)" -> Color(0xcccc2c51)
-  /// ```
   /// https://gist.github.com/whiplashoo/afe1c8e542c6bf8e8b2659eb9d9a4071
-  Color get toColor {
+  ///
+  /// Example:
+  /// ```
+  ///   "#000"                    -> Color(0xff000000)
+  ///   "#cc3333"                 -> Color(0xffcc3333)
+  ///   "#cc3333dd"               -> Color(0xddcc3333)
+  ///   "rgb(204, 44, 81)"        -> Color(0xffcc2c51)
+  ///   "rgba(204, 44, 81, 0.20)" -> Color(0x33cc2c51)
+  ///   "rgba(204, 44, 81, 0.80)" -> Color(0xcccc2c51)
+  /// ```
+  Color get $color {
     return utils.hexOrRGBToColor(this);
   }
 
-  String get capitalize {
+  /// Returns the string with the first character capitalized.
+  ///
+  /// Example:
+  /// ```dart
+  /// "hello".capitalize; // "Hello"
+  /// ```
+  String get $capitalize {
     return "${this[0].toUpperCase()}${substring(1)}";
   }
 
-  bool get isURL => utils.isURL(this);
+  /// Returns true if the string is a URL.
+  ///
+  /// Example:
+  /// ```dart
+  /// "https://www.baidu.com".isURL; // true
+  /// ```
+  bool get $isURL => utils.isURL(this);
 
-  bool get isIP => utils.isIP(this);
-
-  bool get isNumber {
+  /// Returns true if the string is a number.
+  ///
+  /// Example:
+  /// ```dart
+  /// "123".isNumber; // true
+  /// ```
+  bool get $isNumber {
     return double.tryParse(this) != null;
+  }
+
+  /// Return lines(split by "\n")
+  ///
+  /// Example:
+  /// ```dart
+  /// "hello\nworld".$toLines; // ["hello", "world"]
+  /// ```
+  List<String> get $toLines {
+    return split("\n");
   }
 }
 
 extension CuColorUtil on Color {
   /// Returns a hex string representation of the color.
   ///
-  /// e.g.: Color(0xff000000) -> "#000000"
+  /// Example:
+  /// ```dart
+  /// Color(0xff000000).toHex; // "#000000"
+  /// ```
   String get toHex {
     return utils.colorToHex(this);
   }
@@ -261,44 +373,160 @@ extension CuTextStyle on TextStyle {
 }
 
 extension CuIntEdgeInsets on int {
+  /// EdgeInsets.all
+  ///
+  /// Example:
+  /// ```dart
+  /// 12.$edgeAll; // EdgeInsets.all(12)
+  /// ```
   EdgeInsetsGeometry get $edgeAll => EdgeInsets.all(toDouble());
+
+  /// EdgeInsets.only(left)
+  ///
+  /// Example:
+  /// ```dart
+  /// 12.$edgeL; // EdgeInsets.only(left: 12)
+  /// ```
   EdgeInsetsGeometry get $edgeL => EdgeInsets.only(left: toDouble());
+
+  /// EdgeInsets.only(right)
+  ///
+  /// Example:
+  /// ```dart
+  /// 12.$edgeR; // EdgeInsets.only(right: 12)
+  /// ```
   EdgeInsetsGeometry get $edgeR => EdgeInsets.only(right: toDouble());
+
+  /// EdgeInsets.only(top)
+  ///
+  /// Example:
+  /// ```dart
+  /// 12.$edgeT; // EdgeInsets.only(top: 12)
+  /// ```
   EdgeInsetsGeometry get $edgeT => EdgeInsets.only(top: toDouble());
+
+  /// EdgeInsets.only(bottom)
+  ///
+  /// Example:
+  /// ```dart
+  /// 12.$edgeB; // EdgeInsets.only(bottom: 12)
+  /// ```
   EdgeInsetsGeometry get $edgeB => EdgeInsets.only(bottom: toDouble());
+
+  /// EdgeInsets.only(top, bottom)
+  ///
+  /// Example:
+  /// ```dart
+  /// 12.$edgeTB; // EdgeInsets.only(top: 12, bottom: 12)
+  /// ```
   EdgeInsetsGeometry get $edgeTB =>
       EdgeInsets.only(top: toDouble(), bottom: toDouble());
+
+  /// EdgeInsets.only(left, right)
+  ///
+  /// Example:
+  /// ```dart
+  /// 12.$edgeLR; // EdgeInsets.only(left: 12, right: 12)
+  /// ```
   EdgeInsetsGeometry get $edgeLR =>
       EdgeInsets.only(left: toDouble(), right: toDouble());
 }
 
 extension CuDoubleEdgeInsets on double {
+  /// EdgeInsets.all
+  ///
+  /// Example:
+  /// ```dart
+  /// 12.0.$edgeAll; // EdgeInsets.all(12.0)
+  /// ```
   EdgeInsetsGeometry get $edgeAll => EdgeInsets.all(this);
+
+  /// EdgeInsets.only(left)
+  ///
+  /// Example:
+  /// ```dart
+  /// 12.0.$edgeL; // EdgeInsets.only(left: 12.0)
+  /// ```
   EdgeInsetsGeometry get $edgeL => EdgeInsets.only(left: this);
+
+  /// EdgeInsets.only(right)
+  ///
+  /// Example:
+  /// ```dart
+  /// 12.0.$edgeR; // EdgeInsets.only(right: 12.0)
+  /// ```
   EdgeInsetsGeometry get $edgeR => EdgeInsets.only(right: this);
+
+  /// EdgeInsets.only(top)
+  ///
+  /// Example:
+  /// ```dart
+  /// 12.0.$edgeT; // EdgeInsets.only(top: 12.0)
+  /// ```
   EdgeInsetsGeometry get $edgeT => EdgeInsets.only(top: this);
+
+  /// EdgeInsets.only(bottom)
+  ///
+  /// Example:
+  /// ```dart
+  /// 12.0.$edgeB; // EdgeInsets.only(bottom: 12.0)
+  /// ```
   EdgeInsetsGeometry get $edgeB => EdgeInsets.only(bottom: this);
+
+  /// EdgeInsets.only(top, bottom)
+  ///
+  /// Example:
+  /// ```dart
+  /// 12.0.$edgeTB; // EdgeInsets.only(top: 12.0, bottom: 12.0)
+  /// ```
   EdgeInsetsGeometry get $edgeTB => EdgeInsets.only(top: this, bottom: this);
+
+  /// EdgeInsets.only(left, right)
+  ///
+  /// Example:
+  /// ```dart
+  /// 12.0.$edgeLR; // EdgeInsets.only(left: 12.0, right: 12.0)
+  /// ```
   EdgeInsetsGeometry get $edgeLR => EdgeInsets.only(left: this, right: this);
 }
 
 extension CuBorderRadiusCircularWithDouble on double {
   /// 圆角
+  ///
+  /// Example:
+  /// ```dart
+  /// 12.0.radiusCircle; // BorderRadius.circular(12.0)
+  /// ```
   BorderRadiusGeometry get $radiusCircle => BorderRadius.circular(this);
 }
 
 extension CuBorderRadiusCircularWithInt on int {
   /// 圆角
+  ///
+  /// Example:
+  /// ```dart
+  /// 12.radiusCircle; // BorderRadius.circular(12.0)
+  /// ```
   BorderRadiusGeometry get $radiusCircle => BorderRadius.circular(toDouble());
 }
 
 extension CuIntSpaceWidget on int {
   /// Return self height spacing placeholder widget
+  ///
+  /// Example:
+  /// ```dart
+  /// 12.hSpace; // SizedBox(height: 12)
+  /// ```
   Widget get hSpace {
     return SizedBox(height: toDouble());
   }
 
   /// Return self width spacing placeholder widget
+  ///
+  /// Example:
+  /// ```dart
+  /// 12.wSpace; // SizedBox(width: 12)
+  /// ```
   Widget get wSpace {
     return SizedBox(width: toDouble());
   }
@@ -306,33 +534,173 @@ extension CuIntSpaceWidget on int {
 
 extension CuDoubleSpaceWidget on double {
   /// Return self height spacing placeholder widget
+  ///
+  /// Example:
+  /// ```dart
+  /// 12.0.hSpace; // SizedBox(height: 12.0)
+  /// ```
   Widget get hSpace {
     return SizedBox(height: this);
   }
 
   /// Return self width spacing placeholder widget
+  ///
+  /// Example:
+  /// ```dart
+  /// 12.0.wSpace; // SizedBox(width: 12.0)
+  /// ```
   Widget get wSpace {
     return SizedBox(width: this);
   }
 }
 
+/// supercharged/supercharged_dart/lib/datetime/datetime.dart
+extension CuDateTime on DateTime {
+  /// Returns a new [DateTime] object having added the given [duration].
+  ///
+  /// Example:
+  /// ```dart
+  /// DateTime(2020, 1, 1) + 2.days; // 3rd Jan 2020
+  /// ```
+  DateTime operator +(Duration duration) {
+    return add(duration);
+  }
+
+  /// Returns a new [DateTime] object having subtracted the given [duration].
+  ///
+  /// Example:
+  /// ```dart
+  /// DateTime(2020, 1, 1) - 2.days; // 30th Dec 2019
+  /// ```
+  DateTime operator -(Duration duration) {
+    return subtract(duration);
+  }
+}
+
+/// supercharged/supercharged_dart/lib/double/double.dart
+extension CuIntDateUitl on int {
+  /// Returns a [Duration] representing the current value as seconds.
+  ///
+  /// Example:
+  /// ```dart
+  /// 30.seconds; // Duration(seconds: 30);
+  /// ```
+  Duration get seconds {
+    return Duration(microseconds: (1000000 * this).round());
+  }
+
+  /// Returns a [Duration] representing the current value as minutes.
+  ///
+  /// Example:
+  /// ```dart
+  /// 15.minutes; // Duration(minutes: 15);
+  /// ```
+  Duration get minutes {
+    return Duration(milliseconds: (1000 * 60 * this).round());
+  }
+
+  /// Returns a [Duration] representing the current value as hours.
+  ///
+  /// Example:
+  /// ```dart
+  /// 24.hours; // Duration(hours: 24);
+  /// ```
+  Duration get hours {
+    return Duration(milliseconds: (1000 * 60 * 60 * this).round());
+  }
+
+  /// Returns a [Duration] representing the current value as days.
+  ///
+  /// Example:
+  /// ```dart
+  /// 14.days; // Duration(days: 14);
+  /// ```
+  Duration get days {
+    return Duration(milliseconds: (1000 * 60 * 60 * 24 * this).round());
+  }
+}
+
+extension CuIntUitl on int {
+  /// Return List<dynamic> with length
+  ///
+  /// Example:
+  /// ```dart
+  /// 12.$items.map((item) {})
+  /// ```
+  List get $list {
+    return List.generate(this, (index) => index);
+  }
+
+  /// Each length
+  ///
+  /// Example:
+  /// ```dart
+  /// 12.$items.each((index) {})
+  /// ```
+  $each(Function(int idx) cb) {
+    for (var entry in $list.indexed) {
+      cb(entry.$1);
+    }
+  }
+
+  /// Map lis return [List<T>]
+  ///
+  /// Example:
+  /// ```dart
+  /// 12.$items.map<String>((item) => item.toString())
+  /// ```
+  List<T> $map<T>(T Function(int idx) cb) {
+    return $list.indexed.map((entry) => cb(entry.$1)).toList();
+  }
+}
+
 extension CuEdgeInsetsSetter on EdgeInsets {
   /// top | bottom
+  ///
+  /// Example:
+  /// ```dart
+  /// EdgeInsets.all(12).$TB(24); // EdgeInsets(top: 24, bottom: 24, left: 12, right: 12)
+  /// ```
   EdgeInsets $TB(double value) => copyWith(top: value, bottom: value);
 
   /// left | right
+  ///
+  /// Example:
+  /// ```dart
+  /// EdgeInsets.all(12).$LR(24); // EdgeInsets(top: 12, bottom: 12, left: 24, right: 24)
+  /// ```
   EdgeInsets $LR(double value) => copyWith(left: value, right: value);
 
   /// left
+  ///
+  /// Example:
+  /// ```dart
+  /// EdgeInsets.all(12).$L(42); // EdgeInsets(top: 12, bottom: 12, left: 42, right: 12)
+  /// ```
   EdgeInsets $L(double value) => copyWith(left: value);
 
   /// right
+  ///
+  /// Example:
+  /// ```dart
+  /// EdgeInsets.all(12).$R(42); // EdgeInsets(top: 12, bottom: 12, left: 12, right: 42)
+  /// ```
   EdgeInsets $R(double value) => copyWith(right: value);
 
   /// top
+  ///
+  /// Example:
+  /// ```dart
+  /// EdgeInsets.all(12).$T(42); // EdgeInsets(top: 42, bottom: 12, left: 12, right: 12)
+  /// ```
   EdgeInsets $T(double value) => copyWith(top: value);
 
   /// bottom
+  ///
+  /// Example:
+  /// ```dart
+  /// EdgeInsets.all(12).$B(42); // EdgeInsets(top: 12, bottom: 42, left: 12, right: 12)
+  /// ```
   EdgeInsets $B(double value) => copyWith(bottom: value);
 }
 
@@ -340,6 +708,11 @@ extension CuEdgeInsetsListWithInt on List<int> {
   /// [0] => top, bottom
   ///
   /// [1] => left, right
+  ///
+  /// Example:
+  /// ```dart
+  /// [12, 24].$edge; // EdgeInsets(top: 12, bottom: 12, left: 24, right: 24)
+  /// ```
   EdgeInsets get $edge {
     assert(length == 2);
     return EdgeInsets.symmetric(
@@ -353,6 +726,11 @@ extension CuEdgeInsetsListWithDouble on List<double> {
   /// [0] => top, bottom
   ///
   /// [1] => left, right
+  ///
+  /// Example:
+  /// ```dart
+  /// [12.0, 24.0].$edge; // EdgeInsets(top: 12, bottom: 12, left: 24, right: 24)
+  /// ```
   EdgeInsets get $edge {
     assert(length == 2);
     return EdgeInsets.symmetric(

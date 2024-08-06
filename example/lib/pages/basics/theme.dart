@@ -23,7 +23,7 @@ class ThemePageState extends State<ThemePage> {
     }
     return UIMainLayout(
       child: Scaffold(
-        appBar: const CuNavbar(title: "主题"),
+        appBar: const CuNavbar(titleText: "主题"),
         backgroundColor: bg,
         body: Center(
           child: Column(

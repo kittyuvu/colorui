@@ -77,6 +77,8 @@ class CuAction extends StatelessWidget {
   final Color color;
   final double radius;
 
+  factory CuAction.text(String title) => CuAction(title: title);
+
   Widget get left {
     return Container(
       decoration: BoxDecoration(

@@ -53,12 +53,12 @@ class _TextPageState extends State<TextPage> {
   Widget build(BuildContext context) {
     return UIMainLayout(
       child: Scaffold(
-          appBar: const CuNavbar(title: "文本"),
+          appBar: const CuNavbar(titleText: "文本"),
           body: Padding(
             padding: 12.$edgeAll,
             child: Column(
               children: [
-                const CuAction(title: "尺寸示例"),
+                CuAction.text("尺寸示例"),
                 hSpacing,
                 Expanded(
                   child: Container(

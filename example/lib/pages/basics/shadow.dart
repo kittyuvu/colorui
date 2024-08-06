@@ -20,13 +20,13 @@ class _ShadowPageState extends State<ShadowPage> {
   Widget build(BuildContext context) {
     return UIMainLayout(
       child: Scaffold(
-        appBar: const CuNavbar(title: "阴影"),
+        appBar: const CuNavbar(titleText: "阴影"),
         body: Padding(
           padding: 12.$edgeAll,
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const CuAction(title: "阴影尺寸"),
+                CuAction.text("阴影尺寸"),
                 hSpacing,
                 Padding(
                   padding: 8.$edgeLR,
@@ -50,7 +50,7 @@ class _ShadowPageState extends State<ShadowPage> {
                   ),
                 ),
                 hSpacing,
-                const CuAction(title: "支持颜色和自定义透明度"),
+                CuAction.text("支持颜色和自定义透明度"),
                 hSpacing,
                 Padding(
                   padding: 8.$edgeAll,

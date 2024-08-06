@@ -57,14 +57,14 @@ class _TabbarPageState extends State<TabbarPage> {
   Widget build(BuildContext context) {
     return UIMainLayout(
       child: Scaffold(
-        appBar: const CuNavbar(title: "底部导航"),
+        appBar: const CuNavbar(titleText: "底部导航"),
         backgroundColor: CuColors.greyLight,
         body: Padding(
           padding: 8.$edgeAll,
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const CuAction(title: "基本用法"),
+                CuAction.text("基本用法"),
                 hSpacing,
                 CuTabbar<String>(
                   iconSize: 20,
@@ -94,7 +94,7 @@ class _TabbarPageState extends State<TabbarPage> {
                     setState(() {});
                   },
                 ),
-                const CuAction(title: "图片用法"),
+                CuAction.text("图片用法"),
                 hSpacing,
                 CuTabbar(
                   selected: menu1Selected,
@@ -193,7 +193,7 @@ class _TabbarPageState extends State<TabbarPage> {
                   ],
                 ),
                 hSpacing,
-                const CuAction(title: "样式"),
+                CuAction.text("样式"),
                 hSpacing,
                 CuTabbar(
                   selected: menu1Selected,
@@ -268,7 +268,7 @@ class _TabbarPageState extends State<TabbarPage> {
                   ],
                 ),
                 hSpacing,
-                const CuAction(title: "自定义渲染"),
+                CuAction.text("自定义渲染"),
                 hSpacing,
                 CuTabbar(
                   onItemTap: $tap,

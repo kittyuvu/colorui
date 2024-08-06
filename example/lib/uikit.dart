@@ -130,7 +130,7 @@ class CuSimpleCard extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        data.subTitle.capitalize,
+                        data.subTitle.$capitalize,
                         style: const TextStyle().$df.$white,
                       ),
                     ],
