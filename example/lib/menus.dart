@@ -123,6 +123,7 @@ Map<String, List<MenuItem>> kMenus = {
       icon: CuIcons.tag,
       color: CuLinearGradient.yellow,
       shadow: $$lg(color: CuColors.yellow),
+      name: "tag",
     ),
     MenuItem(
       title: "按钮",

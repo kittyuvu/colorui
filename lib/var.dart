@@ -17,3 +17,15 @@ class CuFontSizes {
   /// 页面一级标题,或者用于金额数字等信息
   static const xxl = 22.0;
 }
+
+/// 头像形状
+enum CuShape {
+  /// 圆角
+  radius,
+
+  /// 圆形
+  round,
+
+  /// 超椭圆
+  ellipse,
+}

@@ -195,7 +195,7 @@ extension CuStringUtil on String {
   /// https://gist.github.com/whiplashoo/afe1c8e542c6bf8e8b2659eb9d9a4071
   ///
   /// Example:
-  /// ```
+  /// ```dart
   ///   "#000"                    -> Color(0xff000000)
   ///   "#cc3333"                 -> Color(0xffcc3333)
   ///   "#cc3333dd"               -> Color(0xddcc3333)
@@ -251,8 +251,25 @@ extension CuStringUtil on String {
   /// ```dart
   /// "你好世界".$tx(align: TextAlign.center); // Text("你好世界", textAlign: TextAlign.center)
   /// ```
-  Text $tx({TextStyle? style, align = TextAlign.start}) {
-    return Text(this, style: style, textAlign: align);
+  Text $tx({
+    TextStyle? style,
+    align = TextAlign.start,
+    Color? color,
+    double? size,
+    String? family,
+    FontWeight? weight,
+  }) {
+    return Text(
+      this,
+      style: style ??
+          TextStyle(
+            color: color,
+            fontSize: size,
+            fontWeight: weight,
+            fontFamily: family,
+          ),
+      textAlign: align,
+    );
   }
 }
 
@@ -524,7 +541,7 @@ extension CuBorderRadiusCircularWithDouble on double {
   /// ```dart
   /// 12.0.radiusCircle; // BorderRadius.circular(12.0)
   /// ```
-  BorderRadiusGeometry get $radiusCircle => BorderRadius.circular(this);
+  BorderRadius get $radiusCircle => BorderRadius.circular(this);
 }
 
 extension CuBorderRadiusCircularWithInt on int {

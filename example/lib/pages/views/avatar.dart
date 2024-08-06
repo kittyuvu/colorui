@@ -6,13 +6,13 @@ import 'package:flutter/material.dart';
 
 var kShape = [
   {
-    "shape": CuAvatarShape.radius,
+    "shape": CuShape.radius,
   },
   {
-    "shape": CuAvatarShape.round,
+    "shape": CuShape.round,
   },
   {
-    "shape": CuAvatarShape.ellipse,
+    "shape": CuShape.ellipse,
   },
 ];
 
@@ -205,7 +205,7 @@ class _AvatarPageState extends State<AvatarPage> {
             children: [
               CuAvatar(
                 size: CuAvatarSize.xl,
-                shape: isEllipse ? CuAvatarShape.ellipse : CuAvatarShape.round,
+                shape: isEllipse ? CuShape.ellipse : CuShape.round,
                 background: CuColors.$,
                 image: NetworkImage(avatar),
               ),
@@ -309,7 +309,7 @@ class _AvatarPageState extends State<AvatarPage> {
                         CuAvatar(
                           background: CuColors.white,
                           size: item["size"] as dynamic,
-                          shape: CuAvatarShape.ellipse,
+                          shape: CuShape.ellipse,
                           shadow: CuBoxShadow(),
                           child: Center(
                             child: Text(
@@ -344,7 +344,7 @@ class _AvatarPageState extends State<AvatarPage> {
                           background: bg,
                           gradient: lg,
                           size: CuAvatarSize.xxl,
-                          shape: CuAvatarShape.ellipse,
+                          shape: CuShape.ellipse,
                         ),
                         9.wSpace,
                       ],
@@ -395,7 +395,7 @@ class _AvatarPageState extends State<AvatarPage> {
                     Row(
                       children: [
                         buildBadge(
-                          shape: CuAvatarShape.ellipse,
+                          shape: CuShape.ellipse,
                           child: Text(
                             "+888",
                             style: const TextStyle().$white.$xs,
@@ -407,7 +407,7 @@ class _AvatarPageState extends State<AvatarPage> {
                     Row(
                       children: [
                         buildBadge(
-                          shape: CuAvatarShape.ellipse,
+                          shape: CuShape.ellipse,
                           color: CuColors.blue,
                           child: Text(
                             "SVIP",
@@ -420,7 +420,7 @@ class _AvatarPageState extends State<AvatarPage> {
                     Row(
                       children: [
                         buildBadge(
-                          shape: CuAvatarShape.ellipse,
+                          shape: CuShape.ellipse,
                           color: CuColors.white,
                           position: CuAvatarBadgePostion.bottomRight,
                           offset: const Size(-4, -4),
@@ -435,7 +435,7 @@ class _AvatarPageState extends State<AvatarPage> {
                     Row(
                       children: [
                         buildBadge(
-                          shape: CuAvatarShape.ellipse,
+                          shape: CuShape.ellipse,
                           color: CuColors.white,
                           position: CuAvatarBadgePostion.bottomLeft,
                           offset: const Size(-4, -4),
@@ -450,7 +450,7 @@ class _AvatarPageState extends State<AvatarPage> {
                     Row(
                       children: [
                         buildBadge(
-                          shape: CuAvatarShape.ellipse,
+                          shape: CuShape.ellipse,
                           color: CuColors.blue,
                           position: CuAvatarBadgePostion.topLeft,
                           child: Text(

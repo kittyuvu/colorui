@@ -9,6 +9,7 @@ import 'package:example/pages/basics/tabbar.dart';
 import 'package:example/pages/basics/text.dart';
 import 'package:example/pages/basics/theme.dart';
 import 'package:example/pages/views/avatar.dart';
+import 'package:example/pages/views/tag.dart';
 import 'package:example/pages/views/title.dart';
 import 'package:example/uikit.dart';
 import 'package:go_router/go_router.dart';
@@ -16,7 +17,7 @@ import 'package:go_router/go_router.dart';
 GoRouterWidgetBuilder $noop = (context, state) => nil;
 
 final $router = GoRouter(
-  // initialLocation: "/views/title",
+  initialLocation: "",
   routes: [
     GoRoute(
       path: '/',
@@ -86,6 +87,11 @@ final $router = GoRouter(
           name: "title",
           path: "title",
           builder: (context, state) => const TitlePage(),
+        ),
+        GoRoute(
+          name: "tag",
+          path: "tag",
+          builder: (context, state) => const TagPage(),
         ),
       ],
     ),
