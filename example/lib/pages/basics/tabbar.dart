@@ -285,7 +285,7 @@ class _TabbarPageState extends State<TabbarPage> {
                     "add": CuTabbarItem(
                       flex: 3,
                       child: InkWell(
-                        mouseCursor: SystemMouseCursors.click,
+                        mouseCursor: CuCursors.pointer,
                         child: Container(
                           width: 120,
                           height: 40,

@@ -153,9 +153,7 @@ class CuTag extends StatelessWidget {
         onTap?.call();
       },
       child: MouseRegion(
-        cursor: disabled
-            ? SystemMouseCursors.forbidden
-            : (cursor ?? SystemMouseCursors.click),
+        cursor: disabled ? CuCursors.notAllow : (cursor ?? CuCursors.pointer),
         child: Opacity(
           opacity: disabled ? (disabledOpacity ?? kTagDisabledOpacity) : 1,
           child: Container(

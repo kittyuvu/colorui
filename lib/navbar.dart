@@ -56,7 +56,7 @@ class CuNavbar extends StatelessWidget implements PreferredSizeWidget {
   Widget buildLeft(BuildContext context) {
     return Positioned(
       child: MouseRegion(
-        cursor: SystemMouseCursors.click,
+        cursor: CuCursors.pointer,
         child: GestureDetector(
           onTap: () {
             if (onBack != null) {

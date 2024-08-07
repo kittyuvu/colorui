@@ -783,3 +783,26 @@ extension CuEdgeInsetsListWithDouble on List<double> {
     );
   }
 }
+
+extension CuCursorWithBool on bool {
+  /// 将返回一个 [MouseCursor] 对象
+  ///
+  /// true => [SystemMouseCursors.click]
+  /// false => [SystemMouseCursors.forbidden]
+  ///
+  /// Example:
+  /// ```dart
+  /// (coud == 1).$clickedCursor; // SystemMouseCursors.click
+  /// ```
+  MouseCursor get $clickCursor => this ? CuCursors.pointer : CuCursors.notAllow;
+}
+
+extension CuIconWithIconData on IconData {
+  /// Return Icon
+  ///
+  /// Example:
+  /// ```dart
+  /// CuIcons.github.$icon // Icon(CuIcons.github)
+  /// ```
+  Icon get $icon => Icon(this);
+}

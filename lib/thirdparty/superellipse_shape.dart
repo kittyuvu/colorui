@@ -3,7 +3,6 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
-/// copy by https://github.com/Salby/superellipse_shape
 /// Creates a shape constituting a transition between a rectangle and a circle.
 ///
 /// ```dart

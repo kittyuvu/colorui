@@ -63,7 +63,7 @@ class _SystemPageState extends State<SystemPage> {
                     ),
                     18.hSpace,
                     InkWell(
-                      mouseCursor: SystemMouseCursors.click,
+                      mouseCursor: CuCursors.pointer,
                       child: Container(
                         padding: [4, 24].$edge,
                         decoration: BoxDecoration(

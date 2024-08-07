@@ -95,7 +95,7 @@ class CuSimpleCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: MouseRegion(
-        cursor: SystemMouseCursors.click,
+        cursor: CuCursors.pointer,
         child: DecoratedBox(
           decoration: BoxDecoration(
             gradient: color,

@@ -131,6 +131,7 @@ Map<String, List<MenuItem>> kMenus = {
       icon: CuIcons.ellipse,
       color: CuLinearGradient.purple,
       shadow: $$lg(color: CuColors.purple),
+      name: "button",
     ),
     MenuItem(
       title: "图片",

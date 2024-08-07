@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class CuFontSizes {
   /// 说明文本，标签文字或关注度低的文字
   static const xs = 10.0;
@@ -18,7 +20,7 @@ class CuFontSizes {
   static const xxl = 22.0;
 }
 
-/// 头像形状
+/// 形状
 enum CuShape {
   /// 圆角
   radius,
@@ -28,4 +30,16 @@ enum CuShape {
 
   /// 超椭圆
   ellipse,
+}
+
+/// 鼠标指针, 从 CSS 样式里继承过来
+class CuCursors {
+  /// cursor: default;
+  static const $ = SystemMouseCursors.basic;
+
+  /// cursor: pointer;
+  static const pointer = SystemMouseCursors.click;
+
+  /// cursor: not-allowed;
+  static const notAllow = SystemMouseCursors.forbidden;
 }

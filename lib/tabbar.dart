@@ -1,5 +1,4 @@
-import 'package:colorui/colors.dart';
-import 'package:colorui/extensions.dart';
+import 'package:colorui/colorui.dart';
 import 'package:flutter/material.dart';
 
 /// 默认颜色(文字和 icon)
@@ -342,9 +341,7 @@ class CuTabbar<T> extends StatelessWidget implements PreferredSizeWidget {
           return Expanded(
             flex: curr.flex,
             child: InkWell(
-              mouseCursor: isDisabled
-                  ? SystemMouseCursors.forbidden
-                  : SystemMouseCursors.click,
+              mouseCursor: isDisabled ? CuCursors.notAllow : CuCursors.pointer,
               onTap: () => onTap$(curr, id),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
