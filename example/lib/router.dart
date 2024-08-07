@@ -17,7 +17,7 @@ import 'package:go_router/go_router.dart';
 GoRouterWidgetBuilder $noop = (context, state) => nil;
 
 final $router = GoRouter(
-  initialLocation: "",
+  initialLocation: "/",
   routes: [
     GoRoute(
       path: '/',
