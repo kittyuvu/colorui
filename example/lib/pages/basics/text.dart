@@ -55,7 +55,7 @@ class _TextPageState extends State<TextPage> {
       child: Scaffold(
           appBar: const CuNavbar(titleText: "文本"),
           body: Padding(
-            padding: 12.$edgeAll,
+            padding: 12.$edge,
             child: Column(
               children: [
                 const CuTitle(title: "尺寸示例"),
@@ -75,7 +75,7 @@ class _TextPageState extends State<TextPage> {
                           String note = item["note"];
                           String text = item["text"];
                           return Padding(
-                            padding: 12.$edgeAll,
+                            padding: 12.$edge,
                             child: Row(
                               children: [
                                 Text(size.toString(),

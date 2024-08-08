@@ -60,7 +60,7 @@ class _TabbarPageState extends State<TabbarPage> {
         appBar: const CuNavbar(titleText: "底部导航"),
         backgroundColor: CuColors.greyLight,
         body: Padding(
-          padding: 8.$edgeAll,
+          padding: 8.$edge,
           child: SingleChildScrollView(
             child: Column(
               children: [

@@ -481,7 +481,7 @@ class _IconsPageState extends State<IconsPage> {
       child: Scaffold(
         appBar: const CuNavbar(titleText: "图标"),
         body: Padding(
-          padding: 12.$edgeAll,
+          padding: 12.$edge,
           child: Column(
             children: [
               CuTitle(title: "图标列表(${kIcons.length})"),

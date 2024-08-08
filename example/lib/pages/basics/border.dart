@@ -16,7 +16,7 @@ class _BorderPageState extends State<BorderPage> {
       child: Scaffold(
         appBar: const CuNavbar(titleText: "边框"),
         body: Padding(
-          padding: 12.$edgeAll,
+          padding: 12.$edge,
           child: SingleChildScrollView(
             child: Column(
               children: [

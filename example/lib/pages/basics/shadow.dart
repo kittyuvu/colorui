@@ -22,7 +22,7 @@ class _ShadowPageState extends State<ShadowPage> {
       child: Scaffold(
         appBar: const CuNavbar(titleText: "阴影"),
         body: Padding(
-          padding: 12.$edgeAll,
+          padding: 12.$edge,
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -35,7 +35,7 @@ class _ShadowPageState extends State<ShadowPage> {
                       String name = item['name'];
                       CuBoxShadowSize size = item['size'];
                       return Padding(
-                        padding: 8.$edgeAll,
+                        padding: 8.$edge,
                         child: Container(
                           height: 42,
                           decoration: BoxDecoration(
@@ -53,7 +53,7 @@ class _ShadowPageState extends State<ShadowPage> {
                 const CuTitle(title: "支持颜色和自定义透明度"),
                 hSpacing,
                 Padding(
-                  padding: 8.$edgeAll,
+                  padding: 8.$edge,
                   child: Container(
                     height: 42,
                     decoration: BoxDecoration(

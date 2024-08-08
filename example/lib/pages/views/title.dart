@@ -39,7 +39,7 @@ class _TitlePageState extends State<TitlePage> {
       child: Scaffold(
         appBar: const CuNavbar(titleText: "标题"),
         body: Padding(
-          padding: 12.$edgeAll,
+          padding: 12.$edge,
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -82,7 +82,7 @@ class _TitlePageState extends State<TitlePage> {
                           border: CuColors.gray.$opacity(.24).$border,
                           borderRadius: 12.$radiusCircle,
                         ),
-                        padding: 18.$edgeAll,
+                        padding: 18.$edge,
                         child: Column(
                           children: [
                             const CuTitle(title: "普通"),
