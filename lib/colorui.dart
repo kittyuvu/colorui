@@ -17,3 +17,4 @@ export 'tag.dart';
 export 'thirdparty/superellipse_shape.dart';
 export 'thirdparty/after_layout.dart';
 export 'thirdparty/nil.dart';
+export 'thirdparty/r_dotted_line_border.dart';

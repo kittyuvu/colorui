@@ -8,6 +8,8 @@ import 'package:colorui/var.dart';
 import 'dart:io' show Platform;
 import 'package:flutter/material.dart';
 
+import 'thirdparty/r_dotted_line_border.dart';
+
 extension JSArray<T> on List<T> {
   /// https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
   ///
@@ -770,7 +772,7 @@ extension CuEdgeInsetsListWithInt on List<int> {
   /// [1] => bottom
   /// [2] => left
   /// [3] => right
-  /// 
+  ///
   /// Example:
   /// ```dart
   /// [12, 24, 36, 48].$edgeAll; // EdgeInsets(top: 12, bottom: 24, left: 36, right: 48)
@@ -807,7 +809,7 @@ extension CuEdgeInsetsListWithDouble on List<double> {
   /// [1] => bottom
   /// [2] => left
   /// [3] => right
-  /// 
+  ///
   /// Example:
   /// ```dart
   /// [12, 24, 36, 48].$edgeAll; // EdgeInsets(top: 12, bottom: 24, left: 36, right: 48)
@@ -827,7 +829,7 @@ extension CuCursorWithBool on bool {
   /// Return [MouseCursor]
   ///
   /// true => [SystemMouseCursors.click]
-  /// 
+  ///
   /// false => [SystemMouseCursors.forbidden]
   ///
   /// Example:
@@ -845,4 +847,120 @@ extension CuIconWithIconData on IconData {
   /// CuIcons.github.$icon // Icon(CuIcons.github)
   /// ```
   Icon get $icon => Icon(this);
+}
+
+double __$d(dynamic cx) {
+  if (cx is double) {
+    return cx;
+  } else if (cx is int) {
+    return cx.toDouble();
+  }
+  return 0;
+}
+
+extension CuBorderWithList on List {
+  /// Return [Border]
+  ///
+  /// [0] => width is [double]
+  ///
+  /// [1] => color is [Color]
+  ///
+  /// [2] => has value render dot line
+  ///
+  /// Example:
+  /// ```dart
+  /// [1, CuColors.red].$border // Border.all(width: 1, color: CuColors.red)
+  /// [1, CuColors.red, 1].$border // ⬆ ️dot line
+  /// ```
+  BoxBorder get $border {
+    assert(
+        length >= 2 && (first is double || first is int) && this[1] is Color);
+    if (length == 3) {
+      return RDottedLineBorder.all(width: __$d(first), color: this[1]);
+    }
+    return Border.all(width: __$d(first), color: this[1]);
+  }
+
+  /// Return [Border.$left]
+  ///
+  /// [0] => width is [double]
+  ///
+  /// [1] => color is [Color]
+  ///
+  /// [2] => has value render dot line
+  ///
+  /// Example:
+  /// ```dart
+  /// [1, CuColors.red].$borderL // Border(left: BorderSide(width: 1, color: CuColors.red))
+  /// [1, CuColors.red, 1].$borderL // ⬆ ️dot line
+  /// ```
+  BoxBorder get $borderL {
+    assert(
+        length >= 2 && (first is double || first is int) && this[1] is Color);
+    var side = BorderSide(width: __$d(first), color: this[1]);
+    if (length == 3) {
+      return RDottedLineBorder(left: side);
+    }
+    return Border(left: side);
+  }
+
+  /// Return [Border.$left]
+  ///
+  /// [0] => width is [double]
+  ///
+  /// [1] => color is [Color]
+  ///
+  /// Example:
+  /// ```dart
+  /// [1, CuColors.red].$borderR // Border(right: BorderSide(width: 1, color: CuColors.red))
+  /// ```
+  BoxBorder get $borderR {
+    assert(
+        length >= 2 && (first is double || first is int) && this[1] is Color);
+    var side = BorderSide(width: __$d(first), color: this[1]);
+    if (length == 3) {
+      return RDottedLineBorder(right: side);
+    }
+    return Border(right: side);
+  }
+
+  /// Return [Border.$top]
+  ///
+  /// [0] => width is [double]
+  ///
+  /// [1] => color is [Color]
+  ///
+  /// Example:
+  /// ```dart
+  /// [1, CuColors.red].$borderT // Border(left: BorderSide(width: 1, color: CuColors.red))
+  /// ```
+  BoxBorder get $borderT {
+    assert(
+        length >= 2 && (first is double || first is int) && this[1] is Color);
+    var side = BorderSide(width: __$d(first), color: this[1]);
+    if (length == 3) {
+      return RDottedLineBorder(top: side);
+    }
+    return Border(top: side);
+  }
+
+  /// Return [Border.$bottom]
+  ///
+  /// [0] => width is [double]
+  ///
+  /// [1] => color is [Color]
+  ///
+  /// Example:
+  /// ```dart
+  /// [1, CuColors.red].$borderB // Border(bottom: BorderSide(width: 1, color: CuColors.red))
+  /// ```
+  BoxBorder get $borderB {
+    assert(
+        length >= 2 && (first is double || first is int) && this[1] is Color);
+    var side = BorderSide(width: __$d(first), color: this[1]);
+    if (length == 3) {
+      return RDottedLineBorder(bottom: side);
+    }
+    return Border(bottom: side);
+  }
 }
