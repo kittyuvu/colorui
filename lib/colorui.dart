@@ -1,7 +1,6 @@
 library colorui;
 
 export 'extensions.dart';
-export 'nil.dart';
 export 'common.dart';
 
 export 'icons.dart';
@@ -17,3 +16,4 @@ export 'tag.dart';
 
 export 'thirdparty/superellipse_shape.dart';
 export 'thirdparty/after_layout.dart';
+export 'thirdparty/nil.dart';
