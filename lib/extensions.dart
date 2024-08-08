@@ -196,12 +196,12 @@ extension CuStringUtil on String {
   ///
   /// Example:
   /// ```dart
-  ///   "#000"                    -> Color(0xff000000)
-  ///   "#cc3333"                 -> Color(0xffcc3333)
-  ///   "#cc3333dd"               -> Color(0xddcc3333)
-  ///   "rgb(204, 44, 81)"        -> Color(0xffcc2c51)
-  ///   "rgba(204, 44, 81, 0.20)" -> Color(0x33cc2c51)
-  ///   "rgba(204, 44, 81, 0.80)" -> Color(0xcccc2c51)
+  ///   "#000".$color                    -> Color(0xff000000)
+  ///   "#cc3333".$color                 -> Color(0xffcc3333)
+  ///   "#cc3333dd".$color               -> Color(0xddcc3333)
+  ///   "rgb(204, 44, 81)".$color        -> Color(0xffcc2c51)
+  ///   "rgba(204, 44, 81, 0.20)".$color -> Color(0x33cc2c51)
+  ///   "rgba(204, 44, 81, 0.80)".$color -> Color(0xcccc2c51)
   /// ```
   Color get $color {
     return utils.hexOrRGBToColor(this);
@@ -211,7 +211,7 @@ extension CuStringUtil on String {
   ///
   /// Example:
   /// ```dart
-  /// "hello".capitalize; // "Hello"
+  /// "hello".$capitalize; // "Hello"
   /// ```
   String get $capitalize {
     return "${this[0].toUpperCase()}${substring(1)}";
@@ -221,7 +221,7 @@ extension CuStringUtil on String {
   ///
   /// Example:
   /// ```dart
-  /// "https://www.baidu.com".isURL; // true
+  /// "https://www.baidu.com".$isURL; // true
   /// ```
   bool get $isURL => utils.isURL(this);
 
@@ -229,7 +229,7 @@ extension CuStringUtil on String {
   ///
   /// Example:
   /// ```dart
-  /// "123".isNumber; // true
+  /// "123".$isNumber; // true
   /// ```
   bool get $isNumber {
     return double.tryParse(this) != null;
@@ -278,7 +278,7 @@ extension CuColorUtil on Color {
   ///
   /// Example:
   /// ```dart
-  /// Color(0xff000000).toHex; // "#000000"
+  /// Color(0xff000000).$hex; // "#000000"
   /// ```
   String get $hex {
     return utils.colorToHex(this);
@@ -298,7 +298,7 @@ extension CuColorUtil on Color {
   BoxBorder get $border => Border.all(color: this);
 
   /// ```dart
-  /// CuColors.gray.$opacity(.24).$divider
+  /// CuColors.gray.$opacity(.24).$divider // Divider(color: Color(0x33000000))
   /// ```
   Divider get $divider => Divider(color: this);
 }
@@ -421,9 +421,9 @@ extension CuIntEdgeInsets on int {
   ///
   /// Example:
   /// ```dart
-  /// 12.$edgeAll; // EdgeInsets.all(12)
+  /// 12.$edge; // EdgeInsets.all(12)
   /// ```
-  EdgeInsetsGeometry get $edgeAll => EdgeInsets.all(toDouble());
+  EdgeInsetsGeometry get $edge => EdgeInsets.all(toDouble());
 
   /// EdgeInsets.only(left)
   ///
@@ -481,9 +481,9 @@ extension CuDoubleEdgeInsets on double {
   ///
   /// Example:
   /// ```dart
-  /// 12.0.$edgeAll; // EdgeInsets.all(12.0)
+  /// 12.0.$edge; // EdgeInsets.all(12.0)
   /// ```
-  EdgeInsetsGeometry get $edgeAll => EdgeInsets.all(this);
+  EdgeInsetsGeometry get $edge => EdgeInsets.all(this);
 
   /// EdgeInsets.only(left)
   ///
@@ -665,21 +665,21 @@ extension CuIntDateUitl on int {
 }
 
 extension CuIntUitl on int {
-  /// Return List<dynamic> with length
+  /// Return fill length List<dynamic>
   ///
   /// Example:
   /// ```dart
-  /// 12.$items.map((item) {})
+  /// 12.$list.map((item) {})
   /// ```
   List get $list {
     return List.generate(this, (index) => index);
   }
 
-  /// Each length
+  /// Each fill length list
   ///
   /// Example:
   /// ```dart
-  /// 12.$items.each((index) {})
+  /// 12.$each((index) {})
   /// ```
   $each(Function(int idx) cb) {
     for (var entry in $list.indexed) {
@@ -687,7 +687,8 @@ extension CuIntUitl on int {
     }
   }
 
-  /// Map lis return [List<T>]
+  /// Map fill length list
+  /// return [List<T>]
   ///
   /// Example:
   /// ```dart
@@ -764,6 +765,25 @@ extension CuEdgeInsetsListWithInt on List<int> {
       horizontal: this[1].toDouble(),
     );
   }
+
+  /// [0] => top
+  /// [1] => bottom
+  /// [2] => left
+  /// [3] => right
+  /// 
+  /// Example:
+  /// ```dart
+  /// [12, 24, 36, 48].$edgeAll; // EdgeInsets(top: 12, bottom: 24, left: 36, right: 48)
+  /// ```
+  EdgeInsets get $edgeAll {
+    assert(length == 4);
+    return EdgeInsets.only(
+      top: this[0].toDouble(),
+      bottom: this[1].toDouble(),
+      left: this[2].toDouble(),
+      right: this[3].toDouble(),
+    );
+  }
 }
 
 extension CuEdgeInsetsListWithDouble on List<double> {
@@ -782,12 +802,32 @@ extension CuEdgeInsetsListWithDouble on List<double> {
       horizontal: this[1],
     );
   }
+
+  /// [0] => top
+  /// [1] => bottom
+  /// [2] => left
+  /// [3] => right
+  /// 
+  /// Example:
+  /// ```dart
+  /// [12, 24, 36, 48].$edgeAll; // EdgeInsets(top: 12, bottom: 24, left: 36, right: 48)
+  /// ```
+  EdgeInsets get $edgeAll {
+    assert(length == 4);
+    return EdgeInsets.only(
+      top: this[0],
+      bottom: this[1],
+      left: this[2],
+      right: this[3],
+    );
+  }
 }
 
 extension CuCursorWithBool on bool {
-  /// 将返回一个 [MouseCursor] 对象
+  /// Return [MouseCursor]
   ///
   /// true => [SystemMouseCursors.click]
+  /// 
   /// false => [SystemMouseCursors.forbidden]
   ///
   /// Example:

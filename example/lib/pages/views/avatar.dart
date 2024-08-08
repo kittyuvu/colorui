@@ -258,7 +258,7 @@ class _AvatarPageState extends State<AvatarPage> {
         appBar: const CuNavbar(),
         backgroundColor: "#f1f1f1".$color,
         body: Padding(
-          padding: 16.$edgeAll,
+          padding: 16.$edge,
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

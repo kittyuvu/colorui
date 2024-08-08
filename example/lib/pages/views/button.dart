@@ -16,7 +16,7 @@ class _ButtonPageState extends State<ButtonPage> {
       child: Scaffold(
         appBar: const CuNavbar(),
         body: Padding(
-          padding: 8.$edgeAll,
+          padding: 8.$edge,
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

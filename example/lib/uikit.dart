@@ -103,7 +103,7 @@ class CuSimpleCard extends StatelessWidget {
             boxShadow: shadow,
           ),
           child: Padding(
-            padding: 8.$edgeAll,
+            padding: 8.$edge,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

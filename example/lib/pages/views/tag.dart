@@ -22,7 +22,7 @@ class _TagPageState extends State<TagPage> {
       child: Scaffold(
           appBar: const CuNavbar(titleText: "标签"),
           body: Padding(
-            padding: 12.$edgeAll,
+            padding: 12.$edge,
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
