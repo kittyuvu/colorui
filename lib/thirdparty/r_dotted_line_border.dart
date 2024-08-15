@@ -9,7 +9,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 /// Decoration box package about dotted line border.
-/// 
+///
 /// Example:
 /// ```dart
 /// Container(
@@ -225,7 +225,6 @@ class RDottedLineBorder extends BoxBorder {
     BorderSide bottom = BorderSide.none,
     BorderSide left = BorderSide.none,
   }) {
-
     // We draw the borders as filled shapes, unless the borders are hairline
     // borders, in which case we use PaintingStyle.stroke, with the stroke width
     // specified here.

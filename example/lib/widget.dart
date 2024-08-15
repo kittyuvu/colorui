@@ -1,7 +1,5 @@
 import 'package:colorui/colorui.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 const kMaxScreenWidth = 600;
 const kBgIMG = "https://beta3.color-ui.com/01.jpeg";
@@ -63,5 +61,44 @@ class UIMainLayout extends StatelessWidget {
       );
     }
     return child;
+  }
+}
+
+class GithubLink extends StatelessWidget {
+  const GithubLink({
+    super.key,
+    this.onTap,
+    this.padding,
+    this.style,
+    required this.repo,
+  });
+
+  final String repo;
+  final VoidCallback? onTap;
+  final EdgeInsets? padding;
+  final TextStyle? style;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      mouseCursor: CuCursors.pointer,
+      onTap: onTap,
+      child: Container(
+        padding: padding ?? [4, 24].$edge,
+        decoration: BoxDecoration(
+          border: Border.all(color: CuColors.grey.$opacity(.24)),
+          borderRadius: 4.$radiusCircle,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Icon(CuIcons.githubCircle),
+            4.wSpace,
+            Text(repo, style: style),
+          ],
+        ),
+      ),
+    );
   }
 }

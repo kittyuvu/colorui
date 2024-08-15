@@ -46,7 +46,7 @@ class _SystemPageState extends State<SystemPage> {
                   "Flutter 版本未实现完整功能~",
                   style: const TextStyle().$bold.$pink.$lg,
                 ),
-                Divider(color: CuColors.grey.$opacity(.24)),
+                CuColors.grey.$opacity(.24).$divider,
                 hSpacing,
                 Column(
                   mainAxisSize: MainAxisSize.min,
@@ -62,26 +62,7 @@ class _SystemPageState extends State<SystemPage> {
                       ],
                     ),
                     18.hSpace,
-                    InkWell(
-                      mouseCursor: CuCursors.pointer,
-                      child: Container(
-                        padding: [4, 24].$edge,
-                        decoration: BoxDecoration(
-                          border:
-                              Border.all(color: CuColors.grey.$opacity(.24)),
-                          borderRadius: 4.$radiusCircle,
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            const Icon(CuIcons.githubCircle),
-                            4.wSpace,
-                            const Text("kittyuvu/colorui"),
-                          ],
-                        ),
-                      ),
-                    ),
+                    const GithubLink(repo: "kittyuvu/colorui"),
                   ],
                 ),
               ],

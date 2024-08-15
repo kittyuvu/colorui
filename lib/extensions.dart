@@ -289,7 +289,7 @@ extension CuColorUtil on Color {
   /// ```dart
   /// "#fff".$color.$opacity(0.5); // Color(0xff000000).withOpacity(0.5)
   /// ```
-  Color $opacity(double opacity) => withOpacity(opacity);
+  Color $opacity(double val) => withOpacity(val);
 
   /// Return BoxBorder.all(color: this)
   ///
@@ -699,6 +699,9 @@ extension CuIntUitl on int {
   List<T> $map<T>(T Function(int idx) cb) {
     return $list.indexed.map((entry) => cb(entry.$1)).toList();
   }
+
+  /// Alias [toDouble]
+  double get $d => toDouble();
 }
 
 extension CuEdgeInsetsSetter on EdgeInsets {
