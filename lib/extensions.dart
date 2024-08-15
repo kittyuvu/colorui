@@ -967,3 +967,97 @@ extension CuBorderWithList on List {
     return Border(bottom: side);
   }
 }
+
+extension CuWidgetUtil on Widget {
+  /// Return [Center] widget
+  ///
+  /// Example:
+  /// ```dart
+  /// Text("Hello").$center // Center(child: Text("Hello"))
+  /// ```
+  Widget get $center => Center(child: this);
+
+  /// Return [Padding] widget
+  ///
+  /// Example:
+  /// ```dart
+  /// Text("Hello").$pa(12) // Padding(padding: EdgeInsets.all(12), child: Text("Hello"))
+  /// ```
+  Widget $pa(double all) => Padding(padding: EdgeInsets.all(all), child: this);
+
+  /// Return Left|Right [Padding] widget
+  ///
+  /// Example:
+  /// ```dart
+  /// Text("Hello").$px(12) // Padding(padding: EdgeInsets.only(left: 12, right: 12), child: Text("Hello"))
+  /// ```
+  Widget $px(double x) => Padding(padding: x.$edgeLR, child: this);
+
+  /// Return Top|Bottom [Padding] widget
+  ///
+  /// Example:
+  /// ```dart
+  /// Text("Hello").$py(12)// Padding(padding: EdgeInsets.only(top: 12, bottom: 12), child: Text("Hello"))
+  /// ```
+  Widget $py(double y) => Padding(padding: y.$edgeTB, child: this);
+
+  /// Return Left [Padding] widget
+  ///
+  /// Example:
+  /// ```dart
+  /// Text("Hello").$pl(12)// Padding(padding: EdgeInsets.only(left: 12), child: Text("Hello"))
+  /// ```
+  Widget $pl(double left) => Padding(padding: left.$edgeL, child: this);
+
+  /// Return Right [Padding] widget
+  ///
+  /// Example:
+  /// ```dart
+  /// Text("Hello").$pr(12)// Padding(padding: EdgeInsets.only(right: 12), child: Text("Hello"))
+  /// ```
+  Widget $pr(double right) => Padding(padding: right.$edgeR, child: this);
+
+  /// Return Top [Padding] widget
+  ///
+  /// Example:
+  /// ```dart
+  /// Text("Hello").$pt(12)// Padding(padding: EdgeInsets.only(top: 12), child: Text("Hello"))
+  /// ```
+  Widget $pt(double top) => Padding(padding: top.$edgeT, child: this);
+
+  /// Return Bottom [Padding] widget
+  ///
+  /// Example:
+  /// ```dart
+  /// Text("Hello").$pb(12)// Padding(padding: EdgeInsets.only(bottom: 12), child: Text("Hello"))
+  /// ```
+  Widget $pb(double bottom) => Padding(padding: bottom.$edgeB, child: this);
+
+  /// Return [SizedBox] widget with width and height
+  ///
+  /// Example:
+  /// ```dart
+  /// Text("Hello").$wh(12, 24) // SizedBox(width: 12, height: 24, child: Text("Hello"))
+  /// ```
+  Widget $wh(double width, double height) => SizedBox(
+        width: width,
+        height: height,
+        child: this,
+      );
+
+  /// Return [SizedBox] widget with width
+  ///
+  /// Example:
+  /// ```dart
+  /// Text("Hello").$w(12) // SizedBox(width: 12, child: Text("Hello"))
+  /// ```
+  Widget $w(double width) => SizedBox(width: width, child: this);
+
+  /// Return [SizedBox] widget with height
+  ///
+  /// Example:
+  /// ```dart
+  /// Text("Hello").$h(12) // SizedBox(height: 12, child: Text("Hello"))
+  /// ```
+  Widget $h(double height) => SizedBox(height: height, child: this);
+}
