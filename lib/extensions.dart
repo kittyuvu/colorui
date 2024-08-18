@@ -1060,4 +1060,12 @@ extension CuWidgetUtil on Widget {
   /// Text("Hello").$h(12) // SizedBox(height: 12, child: Text("Hello"))
   /// ```
   Widget $h(double height) => SizedBox(height: height, child: this);
+
+  /// Return [Expanded] widget
+  ///
+  /// Example:
+  /// ```dart
+  /// Text("Hello").$expand // Expanded(child: Text("Hello"))
+  /// ```
+  Widget $expand() => Expanded(child: this);
 }

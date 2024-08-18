@@ -2,6 +2,7 @@ library colorui;
 
 export 'extensions.dart';
 export 'common.dart';
+export 'type.dart';
 
 export 'icons.dart';
 export 'colors.dart';
